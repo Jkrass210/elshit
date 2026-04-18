@@ -1,0 +1,160 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    z-index: 150;
+    overflow-y: auto;
+    @include min768 {
+        background-color: rgba(20, 20, 20, .7);
+    }
+    &__wrap {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        @include min768 {
+            padding: 32px;
+            gap: 24px;
+            max-width: 482px;
+            border-radius: $br24;
+            background-color: $white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @media (max-height: 767px) {
+            top: 10%;
+            transform: translate(-50%, 0);
+        }
+        .modal__close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: $gray_50;
+            @include flex-center;
+            @include min768 {
+                width: 52px;
+                height: 52px;
+                top: 0;
+                right: -62px;
+            }
+            &:hover {
+                background-color: $green;
+                svg {
+                    path {
+                        stroke: $white;
+                    }
+                }
+            }
+        }
+    }
+    &__title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        color: $black;
+        &.t-left {
+            text-align: left;
+        }
+        &.t-right {
+            text-align: right;
+        }
+        @include min768 {
+            font-size: 28px;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    &__article {
+        p {
+            font-size: 16px;
+            line-height: 1.2;
+            &:not(:last-of-type) {
+                margin-bottom: 16px;
+            }
+            a {
+                color: $green;
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .accordion_sect {
+            margin-bottom: 8px;
+            &:first-of-type {
+                margin-top: 26px;
+            }
+            &:last-child {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+.accordion_sect {
+    padding: 16px;
+    border-radius: $br16;
+    background-color: $gray_50;
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        span {
+            text-transform: uppercase;
+            font-size: 18px;
+            color: $black;
+        }
+        .i-arrow {
+            transition: 250ms ease;
+            width: 28px;
+            height: 28px;
+            background-color: $green;
+            border-radius: 50%;
+            @include flex-center;
+            cursor: pointer;
+            flex: 0 0 28px;
+            &.active {
+                transform: rotate(180deg);
+            }
+            &::before {
+                content: "";
+                background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMiIgaGVpZ2h0PSI3IiBmaWxsPSJub25lIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjIiIGQ9Im0uNi42IDUgNSA1LTUiLz48L3N2Zz4=");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 11px;
+                height: 7px;
+            }
+        }
+    }
+    &__content {
+        margin-top: 20px;
+        font-size: 16px;
+        display: none;
+        a {
+            color: $green;
+            text-decoration: underline;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        b {
+            font-weight: 400;
+            color: $green;
+        }
+    }
+}

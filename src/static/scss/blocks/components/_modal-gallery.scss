@@ -1,0 +1,195 @@
+.modal-gallery {
+  display: none;
+  position: fixed;
+  padding: 17px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(20, 20, 20, .7);
+  z-index: 9999;
+  overflow: auto;
+  //align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.5s ease-out;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &.reviews {
+    padding: 60px 17px;
+    .modal-gallery__content {
+      width: 672px;
+      max-height: fit-content;
+      min-height: fit-content;
+      height: auto;
+    }
+    .modal-gallery__close {
+      position: fixed;
+    }
+
+    .sect_nav {
+      position: static;
+      @include min1024 {
+        position: fixed;
+      }
+    }
+
+    .slider_nav {
+      max-width: 816px;
+    }
+
+    .card-reviews-customers {
+      height: auto;
+      margin: auto;
+    }
+
+    .swiper-reviews-customers {
+      .swiper-slide {
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+    .swiper-card-reviews-customers {
+      .swiper-slide {
+        width: auto;
+      }
+    }
+  }
+  &.active {
+    display: flex;
+    animation: fadeIn 0.5s ease-out;
+  }
+  .reviews-partner {
+    &__box-swiper {
+      margin: 0 !important;
+    }
+  }
+  .swiper-reviews-partner {
+    padding: 0 !important;
+  }
+  &__content {
+    margin: auto;
+    max-width: 100%;
+    width: 326px;
+    max-height: calc(100vh - 105px - 40px);
+    min-height: calc(100vh - 105px - 40px);
+    @include min1024 {
+      width: 520px;
+      max-height: calc(100vh - 136px - 140px);
+      min-height: calc(100vh - 136px - 140px);
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: $green;
+    border-radius: 100%;
+    color: $white;
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    
+    @include min1024 {
+      top: 32px;
+      right: 24px;
+      width: 52px;
+      height: 52px;
+      &:focus-visible,&:hover {
+        background-color: $white;
+        color: $black;
+      }
+    }
+
+    @include min1920 {
+      top: 52px;
+      right: 52px;
+    }
+    svg {
+      pointer-events: none;
+    }
+  }
+  .card-reviews-partner {
+    cursor: auto;
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    max-height: calc(100vh - 105px - 105px);
+    min-height: calc(100vh - 105px - 105px);
+    padding: 0;
+    @include min1024 {
+      max-height: calc(100vh - 136px - 140px);
+      min-height: calc(100vh - 136px - 140px);
+    }
+    background-color: transparent;
+    &__hover {
+      display: none;
+    }
+    &__box-img {
+      height: calc(100vh - 105px - 145px);
+      min-height: calc(100vh - 105px - 145px);
+      max-height: calc(100vh - 105px - 145px);
+      @include min1024 {
+        height: calc(100vh - 136px - 180px);
+        min-height: calc(100vh - 136px - 180px);
+        max-height: calc(100vh - 136px - 180px);
+      }
+      img {
+        height: calc(100vh - 105px - 145px);
+        min-height: calc(100vh - 105px - 145px);
+        max-height: calc(100vh - 105px - 145px);
+        @include min1024 {
+          height: calc(100vh - 136px - 180px);
+          min-height: calc(100vh - 136px - 180px);
+          max-height: calc(100vh - 136px - 180px);
+        }
+      }
+    }
+    &__title {
+      color: var(--white, #FFF);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 133.333%;
+    }
+  }
+
+  .sect_nav {
+    pointer-events: none;
+    position: static;
+    margin-top: 16px;
+    align-items: center;
+    justify-content: center;
+    @include min1024 {
+      position: absolute;
+      top: calc(50% - 28px);
+      left: 0;
+      right: 0;
+      margin: 0;
+    }
+  }
+  .slider_nav {
+    width: auto;
+    gap: 8px;
+    justify-content: center;
+    @include min1024 {
+      max-width: 663px;
+      width: 100%;
+      justify-content: space-between;
+    }
+    &__left {
+      pointer-events: auto;
+    }
+    &__right {
+      pointer-events: auto;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

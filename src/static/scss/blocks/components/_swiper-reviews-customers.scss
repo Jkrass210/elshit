@@ -1,0 +1,11 @@
+.swiper-reviews-customers {
+  border-radius: 24px;
+  
+  .swiper-slide {
+    box-sizing: border-box;
+    height: auto;
+    article {
+      height: 100%;
+    }
+  }
+}

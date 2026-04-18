@@ -1,0 +1,191 @@
+.field_set {
+    &__input {
+        height: 52px;
+        width: 100%;
+        border-radius: $br16;
+        background-color: $gray_50;
+        padding: 0 16px;
+        font-size: 16px;
+        @include min768 {
+            height: 56px;
+            font-size: 18px;
+        }
+    }
+    &__textarea {
+        width: 100%;
+        resize: none;
+        padding: 16px;
+        font-size: 16px;
+        min-height: 168px;
+        border-radius: $br16;
+        background-color: $gray_50;
+        @include min768 {
+            font-size: 18px;
+        }
+    }
+    &.error {
+        .field_set__input {
+            border-bottom: 1px solid #F21F1F;
+            &::placeholder {
+                color: #F21F1F;
+            }
+        }
+        &__textarea {
+            border-bottom: 1px solid #F21F1F;
+            &::placeholder {
+                color: #F21F1F;
+            }
+        }
+    }
+    .field-message {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #F21F1F;
+    }
+}
+
+.field_submit {
+    margin-top: 8px;
+    @include min768 {
+        margin-top: 12px;
+    }
+}
+
+.field_upload {
+    display: flex;
+    flex-direction: column;
+    input {
+        display: none;
+    }
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 52px;
+        border-radius: $br16;
+        background-color: $white;
+        border: 1px solid $green;
+        gap: 4px;
+        @include min768 {
+            height: 56px;
+            transition: 250ms ease;
+        }
+        span {
+            color: $green;
+            font-size: 16px;
+            @include min768 {
+                font-size: 18px;
+            }
+        }
+        &:hover {
+            background-color: $green;
+            svg {
+                path {
+                    stroke: $white;
+                }
+            }
+            span {
+                color: $white;
+            }
+        }
+    }
+    .text {
+        margin-top: 8px;
+        font-size: 14px;
+        opacity: .5;
+        color: $black;
+    }
+    &__file {
+        margin-top: 12px;
+        // display: flex;
+        display: none;
+        align-items: center;
+        gap: 8px;
+        .field_upload__name {
+            font-size: 16px;
+            color: $black;
+        }
+        .field_upload__close {
+            flex: 0 0 24px;
+            max-width: 24px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: $green;
+            border: 1px solid $green;
+            @include flex-center;
+            &:hover {
+                background-color: $white;
+                svg {
+                    path {
+                        stroke: $green;
+                    }
+                }
+            }
+        }
+    }
+    &.show {
+        .field_upload__file {
+            display: flex;
+        }
+    }
+}
+
+.filed_checkbox {
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    input {
+        display: none;
+        &:checked {
+            ~.check {
+                background-color: $green;
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .check {
+        position: relative;
+        flex: 0 0 24px;
+        max-width: 24px;
+        height: 24px;
+        border-radius: 4px;
+        border: 1px solid $green;
+        background-color: $white;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMSIgaGVpZ2h0PSI5IiBmaWxsPSJub25lIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIxLjQiIGQ9Ik05LjcuNyAzLjQgOC4ybC0yLjctMyIvPjwvc3ZnPg==");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 11px;
+            height: 9px;
+            opacity: 0;
+            transition: 250ms ease;
+        }
+    }
+    .text {
+        font-size: 14px;
+        color: rgba(20, 20, 20, 0.5);
+        a {
+            color: $green;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+            transition: 250ms ease;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &.error {
+        .check {
+            border-color: #F21F1F;
+        }
+    }
+}

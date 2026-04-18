@@ -1,0 +1,23 @@
+.products_app_grid {
+    border-radius: $br28;
+    background-color: $gray_10;
+    padding: 64px 0;
+    .h2 {
+        margin-bottom: 24px;
+        @include min1024 {
+            margin-bottom: 28px;
+        }
+        @include min1920 {
+            margin-bottom: 36px;
+        }
+    }
+    .grid {
+        .product_app_item {
+            @include max768 {
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+            }
+        }
+    }
+}

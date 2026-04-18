@@ -1,0 +1,77 @@
+.checkbox-type-1 {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: start;
+  gap: 8px;
+
+  @include min1200 {
+    align-items: center;
+  }
+
+  &__input {
+    cursor: pointer;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+
+    &.error {
+      & + .castom {
+        border-color: #FF2C2C;
+      }
+    }
+
+    &:focus-visible,
+    &:focus {
+      outline: none;
+    }
+
+    &:checked {
+      &+.castom {
+        background-color: $green;
+      }
+    }
+  }
+
+  .castom {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 4px;
+    border: 1px solid $green;
+    background-color: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.4s ease-in-out;
+  }
+
+  &__desc {
+    color: rgba(20, 20, 20, 0.50);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    @include min1200 {}
+
+    a {
+      text-decoration: underline;
+      position: relative;
+      color: $green;
+
+      &:focus-visible,
+      &:focus {
+        outline: none;
+      }
+
+      @include min1024 {
+
+        &:focus-visible,
+        &:hover {
+          color: $black;
+        }
+      }
+    }
+  }
+}

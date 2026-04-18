@@ -1,0 +1,215 @@
+.btn_header {
+    position: relative;
+    @include flex-center;
+    cursor: pointer;
+    border-radius: $br14;
+    background-color: $gray_50;
+    height: 44px;
+    transition: 250ms ease;
+    @include min1024 {
+        width: 48px;
+        flex: 0 0 48px;
+        height: 48px;
+        &:hover {
+            background-color: $green;
+            svg {
+                path[fill] {
+                    fill: $white;
+                }
+                path[stroke] {
+                    stroke: $white;
+                }
+            }
+        }
+    }
+    @include max1024 {
+        &:active {
+            transform: scale(1.04);
+        }
+    }
+    .count {
+        position: absolute;
+        z-index: 2;
+        top: -4px;
+        right: -4px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        background-color: $green;
+        @include flex-center;
+        color: $white;
+        font-size: 15px;
+        line-height: 1.1;
+        width: 20px;
+        height: 20px;
+        text-indent: 1px;
+    }
+}
+
+.btn_blur {
+    cursor: pointer;
+    border-radius: $br14;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, .1);
+    padding: 0 24px;
+    border: 1px solid rgba(255, 255, 255, .24);
+    backdrop-filter: blur(7px);
+    @include max1024 {
+        &:active {
+            background-color: $green;
+            backdrop-filter: unset;
+        }
+    }
+    @include min1024 {
+        height: 72px;
+        padding: 0 32px;
+        &:hover {
+            backdrop-filter: unset;
+            background-color: $green;
+            .i-arrow {
+                background-color: $white;
+                svg {
+                    path {
+                        fill: $green;
+                    }
+                }
+            }
+        }
+    }
+	@include min1920 {
+		height: 84px;
+	}
+    span {
+        font-size: 16px;
+        color: #F5F5F5;
+        font-weight: 500;
+        @include min1024 {
+            font-size: 18px;
+        }
+		@include min1920 {
+			font-size: 20px;
+		}
+    }
+    .i-arrow {
+        width: 36px;
+        height: 36px;
+        flex: 0 0 36px;
+        @include flex-center;
+        background-color: $green;
+        border-radius: 50%;
+    }
+}
+
+.btn_all {
+    height: 48px;
+    @include flex-center;
+    border-radius: $br12;
+    padding: 0 38px;
+    background-color: $gray_10;
+    cursor: pointer;
+    font-size: 16px;
+    color: $black;
+    @include min1024 {
+        transition: 250ms ease;
+        height: 56px;
+        padding: 0 50px;
+        &:hover {
+            background-color: $green;
+            color: $white;
+        }
+    }
+}
+
+.btn_green {
+    height: 52px;
+    border-radius: $br16;
+    background-color: $green;
+    @include flex-center;
+    color: $white;
+    font-size: 16px;
+    padding: 0 16px;
+    width: 100%;
+    @include min768 {
+        transition: 250ms ease;
+        height: 56px;
+        font-size: 18px;
+    }
+    &:hover {
+        background-color: $white;
+        color: $green;
+        border: 1px solid $green;
+        span {
+            color: $green;
+        }
+    }
+}
+
+.btn_gray {
+	height: 52px;
+	border-radius: $br20;
+	background-color: $gray_50;
+	@include flex-center;
+	color: $black;
+	font-size: 16px;
+	padding: 0 16px;
+	width: 100%;
+
+	@include min768 {
+		transition: 250ms ease;
+		height: 56px;
+		font-size: 18px;
+	}
+
+	&:hover {
+		background-color: $green;
+		color: $white;
+
+		span {
+			color: $white;
+		}
+	}
+}
+
+.btn {
+    &-read {
+        cursor: pointer;
+        width: fit-content;
+        display: flex;
+        position: relative;
+        margin-top: 12px;
+        color: $green;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: color 0.4s ease-in-out;
+        @include min1024 {
+            font-size: 17px;
+        }
+        @include min1200 {
+            font-size: 18px;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            inset: auto 0 -1px 0;
+            height: 1px;
+            background-color: $green;
+            transition: background-color 0.4s ease-in-out;
+        }
+        &:focus-visible,&:focus {
+            outline: none;
+        }
+        @include min1024 {
+            &:focus-visible, &:hover {
+                color: $gray_200;
+                &::after {
+                    background-color: $gray_200;
+                }
+            }
+        }
+    }
+}

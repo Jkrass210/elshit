@@ -1,0 +1,96 @@
+.contacts_info {
+    &__left {
+        display: flex;
+        flex-direction: column;
+        .h2 {
+            margin-bottom: 24px;
+            @include min1024 {
+                margin-bottom: 28px;
+            }
+            @include min1920 {
+                margin-bottom: 36px;
+            }
+        }
+        .text {
+            a {
+                color: $green;
+                text-decoration: underline;
+                transition: 250ms ease;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .link {
+            margin-top: 24px;
+            color: $green;
+            text-decoration: underline;
+            transition: 250ms ease;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &__right {
+        margin-top: 24px;
+        .swiper {
+            .swiper-pagination {
+                bottom: 16px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .swiper-slide {
+            position: relative;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 30px;
+                background-color: $gray_50;
+                pointer-events: none;
+            }
+        }
+        .contacts_info__img {
+            width: 100%;
+            height: 268px;
+            border-radius: $br28;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            .btn_custom {
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $gray_50;
+                width: 100%;
+                @include max1024 {
+                    &:last-child {
+                        border-bottom-left-radius: $br28;
+                        border-bottom-right-radius: $br28;
+                    }
+                }
+                span {
+                    font-size: 17px;
+                    color: $black;
+                }
+                i {
+                    margin-left: 6px;
+                    max-width: 24px;
+                    flex: 0 0 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    background-color: $green;
+                    @include flex-center;
+                }
+            }
+        }
+    }
+}

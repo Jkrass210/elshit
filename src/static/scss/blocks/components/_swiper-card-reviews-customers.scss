@@ -1,0 +1,17 @@
+.swiper-card-reviews-customers {
+  padding: 0 24px !important;
+  @include min1024 {
+    padding: 0 28px !important;
+  }
+  @include min1200 {
+    padding: 0 !important;
+  }
+  .swiper-slide {
+    width: auto;
+    height: auto;
+    box-sizing: border-box;
+    article {
+      height: 100%;
+    }
+  }
+}

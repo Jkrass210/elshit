@@ -1,0 +1,11 @@
+.products_app_grid {
+    .h2 {
+        margin-bottom: 24px;
+        @include min1024 {
+            margin-bottom: 28px;
+        }
+        @include min1920 {
+            margin-bottom: 36px;
+        }
+    }
+}

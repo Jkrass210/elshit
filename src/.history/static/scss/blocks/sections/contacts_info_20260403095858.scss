@@ -1,0 +1,24 @@
+.contacts_info {
+    &__left {
+        display: flex;
+        flex-direction: column;
+        .h2 {
+            margin-bottom: 24px;
+            @include min1024 {
+                margin-bottom: 28px;
+            }
+            @include min1920 {
+                margin-bottom: 36px;
+            }
+        }
+        .text {
+            font-size: 18px;
+            @include min1024 {
+                font-size: 20px;
+            }
+            @include min1920 {
+                font-size: 22px;
+            }
+        }
+    }
+}

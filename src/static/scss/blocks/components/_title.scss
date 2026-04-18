@@ -1,0 +1,23 @@
+.h1 {
+	font-size: 30px;
+	line-height: 1.15;
+	font-weight: 600;
+	@include min1024 {
+		font-size: 44px;
+	}
+	@include min1920 {
+		font-size: 60px;
+	}
+}
+.h2 {
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.16;
+
+	@include min1024 {
+		font-size: 32px;
+	}
+	@include min1920 {
+		font-size: 40px;
+	}
+}

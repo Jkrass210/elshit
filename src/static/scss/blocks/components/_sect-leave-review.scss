@@ -1,0 +1,58 @@
+.sect-leave-review {
+  padding: 36px 0 56px;
+  border-radius: 28px 28px 0 0;
+  background: $gray_10;
+  position: relative;
+  overflow: hidden;
+  @include min1024 {
+    padding: 52px 0;
+  }
+  @include min1200 {
+    padding: 64px 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-color: $gray_10;
+  }
+  &__content {
+    position: relative;
+    &::before {
+      display: none;
+      z-index: 0;
+      content: '';
+      position: absolute;
+      right: -24px;
+      top: -52px;
+      bottom: -52px;
+      width: 501px;
+      background-image: url('../img/sect-leave-review/bg1200.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      @include min1024 {
+        display: inline-block;
+      }
+      @include min1200 {
+        right: -153px;
+        top: -64px;
+        bottom: -64px;
+        width: 771px;
+        background-image: url('../img/sect-leave-review/bg.svg');
+      }
+    }
+  }
+  .h2 {
+    margin-bottom: 16px;
+    @include min1024 {
+      margin-bottom: 28px;
+    }
+    @include min1200 {
+      margin-bottom: 36px;
+    }
+  }
+}

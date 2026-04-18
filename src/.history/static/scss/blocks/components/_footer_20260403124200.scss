@@ -1,0 +1,191 @@
+.footer {
+    background-color: $black;
+    padding: 32px 0;
+    color: $white;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    @include min1024 {
+        padding: 40px 0 32px 0;
+    }
+    @include min1024 {
+        padding: 56px 0 36px 0;
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+    }
+    &__top {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        @include min1024 {
+            flex-direction: row;
+            gap: 68px;
+        }
+        @include min1024 {
+            gap: 100px;
+        }
+    }
+    &__logo {
+        max-width: 266px;
+        @include min1024 {
+            max-width: 228px;
+        }
+        @include min1024 {
+            max-width: 266px;
+        }
+    }
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @include min1024 {
+            flex-direction: row;
+            gap: 68px;
+        }
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            @include min1024 {
+                gap: 28px;
+            }
+            @include min1920 {
+                gap: 30px;
+            }
+            li {
+                a {
+                    line-height: 20px;
+                    @include min1024 {
+                        &:hover {
+                            border-bottom: 1px solid $green;
+                        }
+                    }
+                    @include min1920 {
+                        font-size: 18px;
+                        line-height: 24px;
+                    }
+                }
+            }
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        @include min1024 {
+            // flex-direction: row;
+            max-width: 316px;
+            margin-left: auto;
+        }
+        @include min1920 {
+            flex-direction: row;
+            gap: 45px;
+            max-width: 473px;
+        }
+        .col {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            @include min1920 {
+                gap: 24px;
+            }
+        }
+    }
+    &__bottom {
+        margin-top: 56px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        @include min1024 {
+            margin-top: 52px;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        .x2_logo {
+            max-width: 144px;
+            // width: 100%;
+            @include min1024 {
+                max-width: 124px;
+            }
+        }
+        .footer__copy {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            @include min1024 {
+                flex-direction: row;
+                gap: 9px;
+            }
+            a,
+            span {
+                font-size: 13px;
+                line-height: 18px;
+                color: $gray_200;
+            }
+            a {
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: 2px;
+                }
+            }
+            .year {
+                @include min1024 {
+                    order: -1;
+                }
+            }
+        }
+    }
+}
+
+.contact_item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    span {
+        font-size: 14px;
+        line-height: 16px;
+        opacity: 0.4;
+    }
+    p {
+        line-height: 20px;
+    }
+    a {
+        align-self: flex-start;
+        &.green {
+            color: $green;
+        }
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+    }
+}
+
+.order_fixed {
+    display: none;
+    @include min1024 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        position: fixed;
+        z-index: 101;
+        right: 64px;
+        bottom: 64px;
+        i {
+            width: 68px;
+            height: 68px;
+            flex: 0 0 68px;
+            max-width: 68px;
+            border-radius: 50%;
+            @include flex-center;
+            background-color: $black;
+        }
+        span {
+            text-align: center;
+            font-size: 18px;
+            line-height: 1.1;
+            color: $black;
+        }
+    }
+}

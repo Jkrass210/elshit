@@ -1,0 +1,118 @@
+main
+	section.sect.sect_banner
+		.banner_slide
+			.swiper
+				.swiper-wrapper
+					.swiper-slide
+						.banner_slide__sect
+							.container
+								h1.h1 Ведущий российский<br> производитель <br>измерительных<br> трансформаторов
+								button(type="button").btn_blur
+									span Каталог продукции
+									i.i-arrow
+										<svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path d="M0.799988 6.69117C0.35816 6.69117 -1.2219e-05 6.333 -1.2219e-05 5.89117C-1.2219e-05 5.44935 0.35816 5.09117 0.799988 5.09117V5.89117V6.69117ZM17.3657 5.32549C17.6781 5.63791 17.6781 6.14444 17.3657 6.45686L12.2745 11.548C11.9621 11.8604 11.4556 11.8604 11.1431 11.548C10.8307 11.2356 10.8307 10.7291 11.1431 10.4167L15.6686 5.89117L11.1431 1.36569C10.8307 1.05327 10.8307 0.54674 11.1431 0.23432C11.4556 -0.0780993 11.9621 -0.0780993 12.2745 0.23432L17.3657 5.32549ZM0.799988 5.89117V5.09117L16.8 5.09117V5.89117V6.69117L0.799988 6.69117V5.89117Z" fill="#F5F5F5"/>
+										</svg>
+							picture
+								source(media="(min-width: 1024px)", srcset="img/banner_top_lg.jpg")
+								img(src="img/banner_top_360.jpg", alt="banner")
+		.container
+			.block_quantitative
+				.item
+					b 180
+					span Человек общее количество персонала
+				.item
+					b >10000
+					span Произвели трансформаторов в 2025г
+				.item
+					b 4000м²
+					span Площадь <br>предприятия
+				.item
+					b 17
+					span Стран присутствия нашей продукции
+	
+	section.sect
+		.container
+			.products_table
+				h2.h2 Наша продукция
+				.grid
+					a(href="#").product_item
+						i.icon
+							img(class="img-state", src="img/product_icon1.svg", alt="alt")
+							img(class="img-hover", src="img/product_iconh1.svg", alt="alt")
+						span Трансформаторы<br> тока
+					a(href="#").product_item
+						i.icon
+							img(class="img-state", src="img/product_icon2.svg", alt="alt")
+							img(class="img-hover", src="img/product_iconh2.svg", alt="alt")
+						span Трансформаторы <br>напряжения
+					a(href="#").product_item
+						i.icon
+							img(class="img-state", src="img/product_icon3.svg", alt="alt")
+							img(class="img-hover", src="img/product_iconh3.svg", alt="alt")
+						span Литые электротехнические изделия
+
+	section.sect
+		.container
+			.press_center
+				h2.h2 Пресс-центр
+				.swiper
+					.swiper-wrapper
+						.swiper-slide
+							a(href="#").press_item
+								.press_item__pic
+									span.date 6 марта 2026
+									img(src="img/news_img.jpg", alt="alt")
+								.press_item__text «Электрощит-К°» участвует в модернизации одного из самых мощных энергообъектов Европы
+						.swiper-slide
+							a(href="#").press_item
+								.press_item__pic
+									span.date 5 марта 2026
+									img(src="img/news_img2.jpg", alt="alt")
+								.press_item__text «Электрощит-К°» усиливает защиту генераторов Прегольской ТЭС
+						.swiper-slide
+							a(href="#").press_item
+								.press_item__pic
+									span.date 17 февраля 2026
+									img(src="img/news_img3.jpg", alt="alt")
+								.press_item__text «Электрощит-К°» продолжает укреплять технологическую надёжность Каширской ГРЭС
+				.sect_nav
+					.slider_nav
+						button(type="button").slider_nav__left
+							<svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M24.8 6.69111C25.2418 6.69111 25.6 6.33294 25.6 5.89111C25.6 5.44929 25.2418 5.09111 24.8 5.09111L24.8 5.89111L24.8 6.69111ZM0.234301 5.32543C-0.0781173 5.63785 -0.0781174 6.14438 0.234301 6.4568L5.32547 11.548C5.63789 11.8604 6.14442 11.8604 6.45684 11.548C6.76926 11.2355 6.76926 10.729 6.45684 10.4166L1.93136 5.89111L6.45684 1.36563C6.76926 1.05321 6.76926 0.546677 6.45684 0.234258C6.14442 -0.0781619 5.63789 -0.078162 5.32547 0.234257L0.234301 5.32543ZM24.8 5.89111L24.8 5.09111L0.799988 5.09111L0.799988 5.89111L0.799988 6.69111L24.8 6.69111L24.8 5.89111Z" fill="#141414"/>
+							</svg>
+						button(type="button").slider_nav__right
+							<svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M0.799988 6.69111C0.35816 6.69111 -1.21803e-05 6.33294 -1.2219e-05 5.89111C-1.22576e-05 5.44929 0.35816 5.09111 0.799988 5.09111L0.799988 5.89111L0.799988 6.69111ZM25.3657 5.32543C25.6781 5.63785 25.6781 6.14438 25.3657 6.4568L20.2745 11.548C19.9621 11.8604 19.4556 11.8604 19.1431 11.548C18.8307 11.2355 18.8307 10.729 19.1431 10.4166L23.6686 5.89111L19.1431 1.36563C18.8307 1.05321 18.8307 0.546677 19.1431 0.234258C19.4556 -0.0781619 19.9621 -0.078162 20.2745 0.234257L25.3657 5.32543ZM0.799988 5.89111L0.799988 5.09111L24.8 5.09111L24.8 5.89111L24.8 6.69111L0.799988 6.69111L0.799988 5.89111Z" fill="#141414"/>
+							</svg>
+					a(href="#").btn_all Все новости
+	section.sect
+		.container
+			.contacts_info
+				.contacts_info__left
+					h2.h2 О нас
+					.text
+						| Производственные площади ООО «Электрощит-Кo» размещены в Калужской области Российской Федерации и составляют 4000 квадратных метров, количество сотрудников на предприятии 180 человек.<br><br>
+						| Технологический цикл, а также современные технологии и оборудование используемые на нашем предприятии позволяет сочетать серийное поточное производство с индивидуальностью каждого заказа, без ущерба для сроков исполнения заказов.<br><br>
+						| На производстве используется самое современное оборудование фирм Руфф, Хедрикс, Хюбертс, Хипотроник, Сименс. Хайвольт.<br><br>
+						| В мае 2016 года введена новая линия оборудования автоматической заливки под давлением.
+					a(href="#").link Читать подробнее
+				.contacts_info__right
+					img(src="img/o_nas_img.jpg", alt="alt")
+					.row
+						a(href="#").btn_custom
+							span Презентация 
+							i
+								<svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4.59998 9.87283V0.600098M0.599976 6.6001L4.59998 10.4183L8.59998 6.6001M0.599976 12.6001H8.59998" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+						a(href="#").btn_custom
+							span ВРеференс лист
+							i
+								<svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M4.59998 9.87283V0.600098M0.599976 6.6001L4.59998 10.4183L8.59998 6.6001M0.599976 12.6001H8.59998" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+
+
+

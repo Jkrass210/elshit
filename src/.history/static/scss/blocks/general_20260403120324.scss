@@ -1,0 +1,90 @@
+// html, body {
+// 	overflow-x: hidden;
+// }
+html {
+    font-size: 100%;
+}
+
+html.lock {
+    overflow-y: hidden;
+}
+
+button {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+}
+
+body {
+    position: relative;
+    min-width: 320px;
+    font-family: 'Golos Text', sans-serif;
+    font-size: 17px;
+    line-height: 1.3;
+    font-weight: 400;
+    background-color: $white;
+    min-height: 100lvh;
+    color: $black;
+    @include min1920 {
+        font-size: 20px;
+    }
+}
+
+.container {
+    max-width: $container;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    @include min1024 {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    @include min1920 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100lvh;
+    main {
+        flex: 1;
+        min-width: 0;
+    }
+    .footer {
+        margin-top: auto;
+    }
+}
+
+section.sect {
+    margin-bottom: 96px;
+    @include min1024 {
+        margin-bottom: 92px;
+    }
+    @include min1024 {
+        margin-bottom: 116px;
+    }
+    @include min1920 {
+        margin-bottom: 148px;
+    }
+}
+
+button {
+    user-select: none;
+}
+
+.hide {
+    display: none;
+}

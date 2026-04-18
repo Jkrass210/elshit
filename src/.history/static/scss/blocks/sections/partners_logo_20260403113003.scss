@@ -1,0 +1,33 @@
+.partners_logo {
+    .h2 {
+        margin-bottom: 24px;
+        @include min1024 {
+            margin-bottom: 28px;
+        }
+        @include min1920 {
+            margin-bottom: 36px;
+        }
+    }
+    .swiper {
+        &-slide {
+            width: auto;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 64px;
+            background: linear-gradient(to right, $white, transparent);
+            pointer-events: none;
+            z-index: 2;
+        }
+        &::before {
+            left: 0;
+        }
+        &::after {
+            right: 0;
+        }
+    }
+}

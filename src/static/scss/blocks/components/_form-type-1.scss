@@ -1,0 +1,93 @@
+.form-type-1 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  &__group-field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right: 0;
+    @include min1024 {
+      padding-right: calc(50% + 10px);
+    }
+    @include min1200 {
+      padding-right: calc(50% + 12px);
+    }
+  }
+  .textarea-type-1 {
+    position: static;
+    top: 0;
+    bottom: -106px;
+    right: 0;
+    width: 100%;
+    &__text {
+      height: 252px;
+      @include min1024 {
+        height: 100%;
+      }
+    }
+    @include min1024 {
+      position: absolute;
+      width: calc(50% - 10px);
+    }
+    @include min1200 {
+      width: calc(50% - 12px);
+      bottom: 0;
+    }
+  }
+  &__group-file {
+    padding-right: 0;
+    padding-top: 16px;
+    @include min1024 {
+      padding-right: calc(50% + 10px);
+    }
+    @include min1200 {
+      padding-right: calc(50% + 12px);
+    }
+  }
+  &__group-submit {
+    padding-top: 24px;
+    padding-right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include min1024 {
+      padding-top: 30px;
+      padding-right: calc(50% + 10px);
+    }
+    @include min1200 {
+      padding-right: calc(50% + 12px);
+    }
+  }
+  &__submit {
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    background-color: $green;
+    color: $white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 133.333%;
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    &:focus-visible,&:focus {
+      outline: none;
+    }
+    @include min1024 {
+      font-size: 17px;
+      &:focus-visible,&:hover {
+        color: $black;
+        background-color: #ededed;
+      }
+    }
+    @include min1200 {
+      width: 365px;
+      max-width: 100%;
+      font-size: 18px;
+    }
+  }
+}

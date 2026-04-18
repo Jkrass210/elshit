@@ -1,0 +1,151 @@
+.contacts_info {
+    @include min1024 {
+        display: flex;
+        gap: 20px;
+    }
+    &__left {
+        display: flex;
+        flex-direction: column;
+        @include min1024 {
+            flex: 1;
+            min-width: 50%;
+        }
+        .h2 {
+            margin-bottom: 24px;
+            @include min1024 {
+                margin-bottom: 28px;
+            }
+            @include min1920 {
+                margin-bottom: 36px;
+            }
+        }
+        .text {
+            a {
+                color: $green;
+                text-decoration: underline;
+                transition: 250ms ease;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+        .link {
+            margin-top: 24px;
+            color: $green;
+            text-decoration: underline;
+            transition: 250ms ease;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+    &__right {
+        margin-top: 24px;
+        @include min1024 {
+            margin-top: 0;
+            flex: 1;
+            min-width: 50%;
+        }
+        .swiper {
+            background-color: $gray_50;
+            border-top-right-radius: $br28;
+            border-top-left-radius: $br28;
+            .swiper-pagination {
+                position: absolute;
+                z-index: 3;
+                bottom: 16px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        .contacts_info__img {
+            width: 100%;
+            height: 268px;
+            border-radius: $br28;
+            position: relative;
+            z-index: 2;
+            overflow: hidden;
+            object-fit: cover;
+            @include min768 {
+                height: 390px;
+            }
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+            @include min768 {
+                flex-direction: row;
+            }
+            .btn_custom {
+                height: 56px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $gray_50;
+                width: 100%;
+                @include min768 {
+                    flex: 1;
+                    min-width: 150px;
+                    height: 72px;
+                }
+                &:not(:last-child) {
+                    position: relative;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        height: 1px;
+                        width: 196px;
+                        background-color: $gray_200;
+                        pointer-events: none;
+                        opacity: .1;
+                        @include min768 {
+                            width: 1px;
+                            height: 36px;
+                            left: auto;
+                            right: -1px;
+                            top: 50%;
+                            transform: translateX(0) translateY(-50%);
+                        }
+                    }
+                }
+                @include max768 {
+                    &:last-child {
+                        border-bottom-left-radius: $br28;
+                        border-bottom-right-radius: $br28;
+                    }
+                }
+                span {
+                    font-size: 17px;
+                    color: $black;
+                }
+                i {
+                    margin-left: 6px;
+                    max-width: 24px;
+                    flex: 0 0 24px;
+                    height: 24px;
+                    border-radius: 50%;
+                    background-color: $green;
+                    @include flex-center;
+                }
+                @include min768 {
+                    &:first-child {
+                        border-bottom-left-radius: $br28;
+                    }
+                    &:last-child {
+                        border-bottom-right-radius: $br28;
+                    }
+                }
+                @include min1024 {
+                    &:hover {
+                        span {
+                            color: $green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

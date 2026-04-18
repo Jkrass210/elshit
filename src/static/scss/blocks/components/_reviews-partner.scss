@@ -1,0 +1,22 @@
+.reviews-partner {
+  &__box-swiper {
+    margin: 0 -16px;
+
+    @include min1024 {
+      margin: 0 -24px;
+    }
+    @include min1920 {
+      margin: 0;
+    }
+  }
+  .sect_nav {
+    padding: 0 16px;
+
+    @include min1024 {
+      padding: 0 24px;
+    }
+    @include min1920 {
+      padding: 0;
+    }
+  }
+}
