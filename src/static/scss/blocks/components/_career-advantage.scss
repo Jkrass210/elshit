@@ -1,0 +1,28 @@
+.career-advantage {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    @include min1024 {
+      gap: 20px;
+    }
+    @include min1200 {
+      gap: 24px;
+    }
+    li {
+      width: 100%;
+      &:nth-child(5n - 1), &:nth-child(5n) {
+        width: 100%;
+      }
+      @include min1024 {
+        width: calc((100% / 2) - (24px * 1 / 2));
+        &:nth-child(5n - 1), &:nth-child(5n) {
+          width: calc((100% / 2) - (24px * 1 / 2));
+        }
+      }
+      @include min1200 {
+        width: calc((100% / 3) - (24px * 2 / 3));
+      }
+    }
+  }
+}

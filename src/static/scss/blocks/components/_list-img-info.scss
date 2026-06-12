@@ -1,0 +1,15 @@
+.list-img-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  @include max1024 {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 450px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  li {
+    position: relative;
+  }
+}

@@ -1,0 +1,123 @@
+.card-logo {
+  height: auto;
+  padding: 28px;
+  border-radius: 20px;
+  background-color: var(--gray-80, #EDEDED);
+  @include max1920 {
+    padding: 20px;
+  }
+  @include max1024 {
+    padding: 20px 16px;
+  }
+  &__title {
+    margin-bottom: 16px;
+    color: var(--black, #141414);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include max1920 {
+      font-size: 18px;
+    }
+    @include max1024 {
+      margin-bottom: 9px;
+    }
+  }
+  &__box-logo-link {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include max1920 {
+      gap: 8px;
+    }
+    img {
+      width: 152px;
+      height: 32px;
+      @include max1920 {
+        width: 133px;
+        height: 28px;
+      }
+      @include max1024 {
+        width: 152px;
+        height: 32px;
+      }
+    }
+    &:not(:last-child) {
+      margin-bottom: 22px;
+      @include max1920 {
+        margin-bottom: 28px;
+      }
+      @include max1024 {
+        margin-bottom: 17px;
+      }
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    .text {
+      color: var(--black, #141414);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 141.176%;
+      transition: color 0.4s ease-in-out;
+      @include max1920 {
+        font-size: 14px;
+      }
+      @include max1024 {
+        font-size: 16px;
+        color: $green;
+        text-decoration: underline;
+      }
+    }
+    .volume {
+      color: var(--gray-200, #646464);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 141.176%;
+      transition: color 0.4s ease-in-out;
+      @include max1920 {
+        font-size: 14px;
+      }
+      @include max1024 {
+        font-size: 13px;
+      }
+    }
+    .svg {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-color: $green;
+      color: $white;
+      margin-left: 4px;
+      @include max1920 {
+        width: 20px;
+        height: 20px;
+      }
+      @include max1024 {
+        display: none;
+      }
+    }
+    &:focus-visible,
+    &:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,
+      &:hover {
+        .text {
+          color: $green;
+        }
+        .volume {
+          color: $green;
+        }
+      }
+    }
+  }
+}

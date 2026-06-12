@@ -1,0 +1,92 @@
+.document-menu {
+  display: flex;
+  gap: 24px;
+  @include max1920 {
+    flex-direction: column;
+    gap: 28px;
+  }
+  @include max1024 {
+    gap: 24px;
+  }
+
+  &__left {
+    width: 324px;
+    flex-shrink: 0;
+    @include max1920 {
+      width: 100%;
+    }
+  }
+  &__wrapper-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include max1200 {
+      gap: 24px;
+    }
+    @include max1024 {
+      gap: 16px;
+    }
+  }
+  &__gallery-line-nav {
+    /* display: flex;
+    gap: 8px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    } */
+    &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5px 16px;
+      height: 52px !important;
+      flex-shrink: 0;
+      color: $black;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      border-radius: 10000px;
+      background-color: $gray_10;
+      transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out !important;
+      @include max1200 {
+        padding: 5px 12px;
+      }
+      &.active {
+        background-color: $green;
+        color: $white;
+      }
+      &:focus-visible, &:focus {
+        outline: none;
+      }
+      @include min1024 {
+        &:focus-visible, &:hover {
+          background-color: $green;
+          color: $white;
+        }
+      }
+    }
+  }
+  &__gallery-box {
+    display: none;
+    &.active {
+      display: block;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+  }
+  &__gallery-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    @include max1200 {
+      gap: 20px;
+    }
+    @include max1024 {
+      grid-template-columns: repeat(1, 1fr);
+      max-width: 450px;
+      margin: 0 auto;
+    }
+  }
+}

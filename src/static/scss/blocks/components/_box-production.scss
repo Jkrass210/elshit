@@ -1,0 +1,27 @@
+.box-production {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  @include min1024 {
+    gap: 24px;
+  }
+  @include min1920 {
+    gap: 32px;
+  }
+  &__title {
+    margin-bottom: 24px;
+    color: $black;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    @include min1024 {
+      margin-bottom: 28px;
+      font-size: 32px;
+    }
+    @include min1920 {
+      font-size: 40px;
+      margin-bottom: 36px;
+    }
+  }
+}

@@ -1,0 +1,91 @@
+.product-list {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    @include max1920 {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @include max1024 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include max768 {
+      margin: 0 auto;
+      width: 450px;
+      max-width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 92px;
+  }
+
+  &__box-description {
+    display: flex;
+    gap: 24px;
+    @include max1920 {
+      flex-direction: column;
+      gap: 56px;
+    }
+    @include max1024 {
+      gap: 36px;
+    }
+  }
+
+  &__description {
+    padding-top: 32px;
+    flex: 1 1 calc(50% - 12px);
+    @include max1920 {
+      padding-top: 0;
+    }
+  }
+
+  &__description-title {
+    margin-bottom: 28px;
+    color: var(--black, #141414);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include max1920 {
+      font-size: 28px;
+    }
+    @include max1024 {
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__properties {
+    flex: 1 1 calc(50% - 12px);
+  }
+
+  &__properties-table {
+    padding: 32px;
+    border-radius: 24px;
+    background-color: $gray_10;
+    @include max1024 {
+      padding: 24px;
+    }
+    &-footer {
+      padding-top: 20px;
+      color: var(--gray-200, #646464);
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 135%;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      @include max1024 {
+        font-size: 12px;
+      }
+      .formula {
+        width: 100px;
+        height: 16px;
+      }
+    }
+  }
+}

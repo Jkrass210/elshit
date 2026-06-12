@@ -1,0 +1,9 @@
+.detail-product-info {
+  padding-top: 124px;
+  @include max1920 {
+    padding-top: 116px;
+  }
+  @include max1024 {
+    padding-top: 96px;
+  }
+}

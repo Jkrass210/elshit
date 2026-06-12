@@ -1,0 +1,262 @@
+.link-download {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 148px;
+  gap: 8px;
+  border-radius: 24px;
+  border: 1px solid var(--gray-80, #EDEDED);
+  transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+  @include max1920 {
+    padding: 20px;
+  }
+  &:focus-visible, &:focus {
+    outline: none;
+  }
+  @include min1024 {
+    &:focus-visible,&:hover {
+      border-color: $green;
+      background-color: $green;
+      .name {
+        color: $white;
+      }
+      .group {
+        .text {
+          color: $white;
+        }
+        .svg {
+          background-color: $white;
+          color: $green;
+        }
+      }
+    }
+  }
+  .name {
+    color: #000;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    transition: color 0.4s ease-in-out;
+  }
+  .group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    .text {
+      color: var(--black, #141414);
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%;
+      transition: color 0.4s ease-in-out;
+    }
+    .svg {
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-color: $green;
+      color: $white;
+      transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    }
+  }
+
+  &-type {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 180px;
+    gap: 19px;
+    border-radius: 24px;
+    border: 1px solid var(--gray-80, #EDEDED);
+    transition: border-color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+    @include max1920 {
+      padding: 20px;
+    }
+    &:focus-visible, &:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,&:hover {
+        border-color: $green;
+        background-color: $green;
+        .top-group {
+          .type {
+            .name {
+              color: $white;
+            }
+            .info {
+              color: $white;
+            }
+          }
+          color: $white;
+        }
+        .group {
+          .text {
+            color: $white;
+          }
+          .svg {
+            background-color: $white;
+            color: $green;
+          }
+        }
+      }
+    }
+    .top-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      .type {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        .name {
+          color: var(--gray-200, #646464);
+          font-size: 13px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          transition: color 0.4s ease-in-out;
+        }
+        .info {
+          color: #000;
+          font-size: 17px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 130%;
+          transition: color 0.4s ease-in-out;
+        }
+      }
+    }
+    .group {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      .text {
+        color: var(--black, #141414);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+        transition: color 0.4s ease-in-out;
+      }
+      .svg {
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        background-color: $green;
+        color: $white;
+        transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+      }
+    }
+  }
+
+  &-gallery {
+    height: 100%;
+    min-height: 498px;
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: space-between;
+    border-radius: 24px;
+    background-color: $white;
+    border: 1px solid var(--gray-80, #EDEDED);
+    transition: border-color 0.4s ease-in-out;
+    &:focus-visible, &:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,&:hover {
+        border-color: $green;
+      }
+    }
+    @include max1200 {
+      padding: 24px;
+      min-height: 490px;
+    }
+    @include max1024 {
+      padding: 16px 34px;
+      min-height: 390px;
+    }
+    .top {
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 340px;
+      max-height: 340px;
+      min-height: 340px;
+      @include max1200 {
+        max-width: 240px;
+      }
+      @include max1024 {
+        max-width: 260px;
+        height: 256px;
+        max-height: 256px;
+        min-height: 256px;
+      }
+      img {
+        width: auto;
+        height: 340px;
+        max-height: 340px;
+        min-height: 340px;
+        @include max1024 {
+          height: 256px;
+          max-height: 256px;
+          min-height: 256px;
+        }
+      }
+    }
+    .middle {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .name {
+        color: var(--black, #141414);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+      }
+      .time {
+        color: rgba(100, 100, 100, 0.5);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+      }
+    }
+    .group {
+      display: flex;
+      gap: 4px;
+      .text {
+        color: var(--black, #141414);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 120%;
+      }
+      .svg {
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        background-color: $green;
+        color: $white;
+        transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+      }
+    }
+  }
+}

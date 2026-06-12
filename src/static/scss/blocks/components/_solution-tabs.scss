@@ -1,0 +1,134 @@
+.solution-tabs {
+  background-color: $white;
+  overflow: hidden;
+  border-radius: 24px;
+  padding: 48px;
+  min-height: 572px;
+  display: flex;
+  gap: calc(100 / 1272 * 100%);
+  @include max1920 {
+    padding: 32px;
+    gap: calc(48 / 912 * 100%);
+  }
+  @include max1024 {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    min-height: auto;
+    gap: 24px;
+    flex-direction: column-reverse;
+  }
+  &__line-nav {
+    position: relative;
+    z-index: 1;
+    width: calc(788 / 1272 * 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    @include max1920 {
+      width: calc(466 / 912 * 100%);
+    }
+    @include max1024 {
+      width: 100%;
+      gap: 16px;
+    }
+  }
+  &__btn {
+    width: 100%;
+    text-align: start;
+    padding: 16px 20px;
+    border-radius: 24px;
+    color: var(--black, #141414);
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    @include max1920 {
+      font-size: 15px;
+    }
+    @include max1024 {
+      position: relative;
+      padding: 0 0 0 33px;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        flex-shrink: 0;
+        background-color: $green;
+        border-radius: 100%;
+      }
+    }
+    &.active {
+      pointer-events: none;
+      background-color: var(--gray-50, #F5F5F5);
+    }
+    &:focus-visible, &:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible, &:hover {
+        background-color: $green;
+        color: $white;
+        &.active {
+          background-color: var(--gray-50, #F5F5F5);
+          color: var(--black, #141414);
+        }
+      }
+    }
+    .text {
+      text-align: start;
+      @include max1024 {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    @include max1024 {
+      justify-content: center;
+    }
+    &::before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      top: -48px;
+      left: auto;
+      right: -48px;
+      bottom: -48px;
+      width: 540px;
+      z-index: 0;
+      background-image: url('../img/solution-tabs/bg.svg');
+      background-repeat: no-repeat;
+      background-position: center right;
+      background-size: cover;
+      @include max1920 {
+        top: -32px;
+        left: auto;
+        right: -80px;
+        bottom: -32px;
+        background-image: url('../img/solution-tabs/bg1920.svg');
+      }
+      @include max1024 {
+        display: none;
+      }
+    }
+  }
+  &__box {
+    position: relative;
+    display: none;
+    &.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+  }
+}

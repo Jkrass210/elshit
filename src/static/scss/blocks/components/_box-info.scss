@@ -1,0 +1,54 @@
+.box-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  .name {
+    color: $gray_200;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .info {
+    color: $black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+  }
+  .phone {
+    width: fit-content;
+    color: $black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    transition: color 0.3s ease-in-out;
+    &:focus-visible,&:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,&:hover {
+        color: $green;
+      }
+    }
+  }
+  .mail {
+    width: fit-content;
+    color: $green;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%;
+    transition: color 0.3s ease-in-out;
+    text-decoration-line: underline;
+    &:focus-visible,&:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,&:hover {
+        color: $black;
+      }
+    }
+  }
+}

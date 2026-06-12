@@ -1,0 +1,17 @@
+.point-list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  @include max1920 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  @include max1024 {
+    width: 450px;
+    max-width: 100%;
+    margin: 0 auto;
+    gap: 24px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

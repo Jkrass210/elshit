@@ -1,0 +1,10 @@
+.solid-bg {
+  padding: 36px 0;
+  background-color: $gray_10;
+  @include min1024 {
+    padding: 52px 0;
+  }
+  @include min1920 {
+    padding: 96px 0;
+  }
+}

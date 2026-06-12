@@ -1,0 +1,54 @@
+.sect-leave-career {
+  padding: 24px 0 28px;
+  border-radius: 28px 28px 0 0;
+  background: $gray_10;
+  position: relative;
+  overflow: hidden;
+  @include min1024 {
+    padding: 52px 0;
+  }
+  @include min1200 {
+    padding: 96px 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 30px;
+    background-color: $gray_10;
+  }
+  &__content {
+    padding: 28px 20px;
+    background-color: $white;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @include min1024 {
+      padding: 28px;
+      gap: 28px;
+    }
+    @include min1200 {
+      padding: 48px;
+      gap: 36px;
+    }
+  }
+  .input-type-1 {
+    &__input {
+      background: #F9F9F9;
+    }
+  }
+  .textarea-type-1 {
+    &__text {
+      background: #F9F9F9;
+    }
+  }
+  .form-type-1 .textarea-type-1 {
+    bottom: -75px;
+    @include min1200 {
+      bottom: 0;
+    }
+  }
+}

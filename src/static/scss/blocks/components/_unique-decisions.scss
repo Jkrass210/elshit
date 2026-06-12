@@ -1,0 +1,25 @@
+.unique-decisions {
+  .h2 {
+    margin-bottom: 36px;
+  }
+  &__box-swiper {
+    position: relative;
+    @include max1024 {
+      width: 450px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
+section.sect:has(.unique-decisions) {
+  padding: 96px 0;
+  border-radius: 28px 28px 0 0;
+  background-color: $gray_10;
+  @include max1920 {
+    padding: 56px 0 89px;
+  }
+  @include max1024 {
+    padding: 44px 0 44px;
+  }
+}

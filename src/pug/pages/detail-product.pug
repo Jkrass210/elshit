@@ -1,0 +1,14 @@
+extends ../layout/layout
+block vars
+	- var title = 'Список продукции';
+
+block header
+
+block content
+	.wrapper
+		include ../includes/components/_header
+		include ../includes/pages/detail-product
+		include ../includes/components/_footer
+
+block footer
+	include ../includes/script

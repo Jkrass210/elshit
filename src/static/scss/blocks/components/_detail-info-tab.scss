@@ -1,0 +1,139 @@
+.detail-info-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  align-items: center;
+  @include max1920 {
+    gap: 24px;
+    align-items: start;
+  }
+  @include max1024 {
+    gap: 17px;
+  }
+  &__box-btn {
+    width: calc(100% + 32px);
+    margin: 0 -16px;
+    padding: 0 16px;
+    overflow: auto;
+    background-color: $gray_10;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__line-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px;
+    overflow: auto;
+    /* background-color: $gray_10; */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include max1920 {
+      width: 100%;
+    }
+    @include max1024 {
+      width: calc(100% + 32px);
+      margin: 0 -16px;
+      padding: 8px 24px 8px 24px;
+    }
+  }
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 5px 16px;
+    height: 56px;
+    border-radius: 20px;
+    color: var(--black, #141414);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 133.333%;
+    border: 1px solid var(--gray-50, #F5F5F5);
+    background-color: var(--white, #FFF);
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    &:first-child {
+      &::before {
+        border-radius: 24px 0 0 24px;
+        inset: -12px -5px -12px -12px;
+        @include max1024 {
+          inset: -10px -5px -10px -8px;
+        }
+      }
+    }
+    &:last-child {
+      &::before {
+        border-radius: 0 24px 24px 0;
+        inset: -12px -12px -12px -5px;
+        @include max1024 {
+          inset: -10px -8px -10px -5px;
+        }
+      }
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -12px -5px -12px -5px;
+      background-color: $gray_10;
+      z-index: -1;
+      @include max1024 {
+        inset: -10px -5px -10px -5px;
+      }
+    }
+    @include max1920 {
+      flex: 1;
+      width: auto;
+    }
+    &:focus-visible, &:focus {
+      outline: none;
+    }
+    &.active {
+      color: $white;
+      background-color: $green;
+    }
+    @include min1024 {
+      &:focus-visible, &:hover {
+        color: $white;
+        background-color: $green;
+      }
+    }
+  }
+  &__content {
+    width: 100%;
+  }
+  &__box {
+    display: none;
+    &.active {
+      display: block;
+      animation: fadeIn .3s ease;
+    }
+  }
+  &__box-content {
+    .properties-table {
+      display: flex;
+      flex-direction: row;
+      gap: 24px;
+      @include max1920 {
+        gap: 16px;
+        flex-direction: column;
+      }
+      &__body {
+        flex: 1 1 calc(50% - 12px);
+        height: fit-content;
+        padding: 32px;
+        border-radius: 24px;
+        background-color: $gray_10;
+      }
+    }
+  }
+}

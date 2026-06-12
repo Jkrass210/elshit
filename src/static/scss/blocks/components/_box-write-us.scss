@@ -1,0 +1,48 @@
+.box-write-us {
+  padding: 24px 36px 20px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  border-radius: 24px;
+  background-color: $gray_10;
+  @include max1200 {
+    padding: 24px 28px 20px 28px;
+  }
+  @include max1024 {
+    padding: 24px;
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__desc {
+    color: #000;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    @include max1200 {
+      font-size: 17px;
+    }
+
+    br {
+      display: none;
+      @include max1200 {
+        display: block;
+      }
+    }
+  }
+  &__box-btn {
+    @include max1024 {
+      width: 100%;
+    }
+  }
+  .btn_green {
+    height: 52px;
+    font-size: 16px;
+    width: 211px;
+    max-width: 100%;
+    @include max1024 {
+      width: 100%;
+    }
+  }
+}

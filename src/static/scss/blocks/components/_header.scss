@@ -5,18 +5,33 @@
 	width: 100%;
 	z-index: 100;
 
+	&.white {
+		.header__wrap {
+			background-color: $white;
+		}
+		.btn_header {
+			background-color: $gray_50;
+		}
+		.header__burger {
+			@include min1024 {
+				background-color: $gray_50;
+			}
+		}
+	}
+
 	@include min1024 {
 		top: 24px;
 	}
 
 	&__wrap {
-		background-color: $white;
+		background-color: $gray_10;
 		border-radius: $br12;
 		height: 56px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		padding: 12px 16px 12px 12px;
+		transition: background-color 0.3s ease;
 
 		@include min1024 {
 			position: relative;
@@ -900,7 +915,8 @@
 		
 
 		@include min1024 {
-			background-color: $gray_50;
+			//background-color: $gray_50;
+			background-color: var(--gray-80, #EDEDED);
 			flex: 0 0 124px;
 			max-width: 124px;
 			height: 48px;

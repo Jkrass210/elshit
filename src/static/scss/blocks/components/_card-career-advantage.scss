@@ -1,0 +1,46 @@
+.card-career-advantage {
+  height: 100%;
+  padding: 24px;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--gray-10, #F7F7F7);
+  @include min1024 {
+    padding: 28px;
+    gap: 24px;
+  }
+  &__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    h3 {
+      color: var(--black, #141414);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      @include min1024 {
+        font-size: 20px;
+      }
+    }
+    p {
+      color: var(--black, #141414);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      @include min1024 {
+        font-size: 16px;
+      }
+    }
+  }
+}

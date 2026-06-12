@@ -1,0 +1,236 @@
+main
+  .path
+    ul
+      li
+        a(href="#") Главная страница
+      li
+        span Пресс-центр
+    .path-back
+      a.path-back_link(href="#")
+        span.svg
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M1.57574 12.5757C1.34142 12.8101 1.34142 13.1899 1.57574 13.4243L5.39411 17.2426C5.62843 17.477 6.00833 17.477 6.24264 17.2426C6.47696 17.0083 6.47696 16.6284 6.24264 16.3941L2.84853 13L6.24264 9.60589C6.47696 9.37157 6.47696 8.99167 6.24264 8.75736C6.00833 8.52304 5.62843 8.52304 5.39411 8.75736L1.57574 12.5757ZM22 13.6C22.3314 13.6 22.6 13.3314 22.6 13C22.6 12.6686 22.3314 12.4 22 12.4L22 13L22 13.6ZM2 13L2 13.6L22 13.6L22 13L22 12.4L2 12.4L2 13Z" fill="currentColor"/>
+          </svg>
+        span.text Вернуться назад
+
+  .page-title
+    h1.page-title__text Пресс-центр
+
+  section.sect
+    .container
+      .press_center-line
+        h2.press_center-line__title Новости компании
+        .press_center-line__box-swiper
+          .swiper-press_center-line.swiper.load
+            .swiper-wrapper
+              .swiper-slide
+                a(href="#").press_item
+                  .press_item__pic
+                    span.date 6 марта 2026
+                    img(src="img/news_img.jpg", alt="alt")
+                  .press_item__text «Электрощит-К°» участвует в модернизации одного из самых мощных энергообъектов Европы
+              .swiper-slide
+                a(href="#").press_item
+                  .press_item__pic
+                    span.date 5 марта 2026
+                    img(src="img/news_img2.jpg", alt="alt")
+                  .press_item__text «Электрощит-К°» усиливает защиту генераторов Прегольской ТЭС
+              .swiper-slide
+                a(href="#").press_item
+                  .press_item__pic
+                    span.date 17 февраля 2026
+                    img(src="img/news_img3.jpg", alt="alt")
+                  .press_item__text «Электрощит-К°» продолжает укреплять технологическую надёжность Каширской ГРЭС
+              .swiper-slide
+                a(href="#").press_item
+                  .press_item__pic
+                    span.date 17 февраля 2026
+                    img(src="img/news_img3.jpg", alt="alt")
+                  .press_item__text «Электрощит-К°» продолжает укреплять технологическую надёжность Каширской ГРЭС
+            .sect_nav
+              .slider_nav
+                button(type="button").slider_nav__left
+                  <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.8 6.69111C25.2418 6.69111 25.6 6.33294 25.6 5.89111C25.6 5.44929 25.2418 5.09111 24.8 5.09111L24.8 5.89111L24.8 6.69111ZM0.234301 5.32543C-0.0781173 5.63785 -0.0781174 6.14438 0.234301 6.4568L5.32547 11.548C5.63789 11.8604 6.14442 11.8604 6.45684 11.548C6.76926 11.2355 6.76926 10.729 6.45684 10.4166L1.93136 5.89111L6.45684 1.36563C6.76926 1.05321 6.76926 0.546677 6.45684 0.234258C6.14442 -0.0781619 5.63789 -0.078162 5.32547 0.234257L0.234301 5.32543ZM24.8 5.89111L24.8 5.09111L0.799988 5.09111L0.799988 5.89111L0.799988 6.69111L24.8 6.69111L24.8 5.89111Z" fill="#141414"/>
+                  </svg>
+                button(type="button").slider_nav__right
+                  <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.799988 6.69111C0.35816 6.69111 -1.21803e-05 6.33294 -1.2219e-05 5.89111C-1.22576e-05 5.44929 0.35816 5.09111 0.799988 5.09111L0.799988 5.89111L0.799988 6.69111ZM25.3657 5.32543C25.6781 5.63785 25.6781 6.14438 25.3657 6.4568L20.2745 11.548C19.9621 11.8604 19.4556 11.8604 19.1431 11.548C18.8307 11.2355 18.8307 10.729 19.1431 10.4166L23.6686 5.89111L19.1431 1.36563C18.8307 1.05321 18.8307 0.546677 19.1431 0.234258C19.4556 -0.0781619 19.9621 -0.078162 20.2745 0.234257L25.3657 5.32543ZM0.799988 5.89111L0.799988 5.09111L24.8 5.09111L24.8 5.89111L24.8 6.69111L0.799988 6.69111L0.799988 5.89111Z" fill="#141414"/>
+                  </svg>
+              a(href="#").btn_all Все новости
+
+  section.sect.solid-bg
+    .container
+      .press_center-line
+        h2.press_center-line__title Фирменный стиль
+        .press_center-line__content
+          article.card-brandbook
+            .card-brandbook__top
+              h3.card-brandbook__title Брендбук и фирменный стиль
+              p.card-brandbook__text Логотип, цветовая схема и фирменный стиль имеют собственные правила представленные в документе. Воспроизведение на любых носителях возможно только при строгом соблюдении правил.
+            .card-brandbook__bottom
+              a(href="#" download).card-brandbook__link
+                span.text Скачать <b>брендбук</b>
+                span.volume (PDF 2,4 Мб)
+                span.svg
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none">
+                    <path d="M4.5 9.77273V0.5M0.5 6.5L4.5 10.3182L8.5 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+          article.card-logo
+            h3.card-logo__title Скачать логотип
+            .card-logo__box-logo-link
+              img(src="img/logo/logo-W.svg", alt="alt")
+              a(href="#" download).card-logo__link
+                span.text Скачать
+                span.volume (PNG 1,2 Мб)
+                span.svg
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none">
+                    <path d="M4.5 9.77273V0.5M0.5 6.5L4.5 10.3182L8.5 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            .card-logo__box-logo-link
+              img(src="img/logo/logo-B.svg", alt="alt")
+              a(href="#" download).card-logo__link
+                span.text Скачать
+                span.volume (PNG 1,2 Мб)
+                span.svg
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none">
+                    <path d="M4.5 9.77273V0.5M0.5 6.5L4.5 10.3182L8.5 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+          article.card-logo
+            h3.card-logo__title Download logotype
+            .card-logo__box-logo-link
+              img(src="img/logo/logo-W.svg", alt="alt")
+              a(href="#" download).card-logo__link
+                span.text Download
+                span.volume (PNG 1,2 Мб)
+                span.svg
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none">
+                    <path d="M4.5 9.77273V0.5M0.5 6.5L4.5 10.3182L8.5 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+            .card-logo__box-logo-link
+              img(src="img/logo/logo-B.svg", alt="alt")
+              a(href="#" download).card-logo__link
+                span.text Download
+                span.volume (PNG 1,2 Мб)
+                span.svg
+                  <svg xmlns="http://www.w3.org/2000/svg" width="9" height="11" viewBox="0 0 9 11" fill="none">
+                    <path d="M4.5 9.77273V0.5M0.5 6.5L4.5 10.3182L8.5 6.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+
+  section.sect
+    .container
+      .press_center-line
+        h2.press_center-line__title Фотографии
+        .press_center-line__box-swiper
+          .swiper-press_center-line.swiper.load
+            .swiper-wrapper
+              .swiper-slide
+                article.card-photo
+                  a.card-photo__link(href="#")
+                    span.card-photo__top
+                      span.tag 14 фотографий
+                      span.card-photo__img
+                        img(src="img/card-photo/1.jpg", alt="alt")
+                    span.card-photo__bottom
+                      span.card-photo__title Подпись/описание к фотоальбому
+              .swiper-slide
+                article.card-photo
+                  a.card-photo__link(href="#")
+                    span.card-photo__top
+                      span.tag 14 фотографий
+                      span.card-photo__img
+                        img(src="img/card-photo/2.jpg", alt="alt")
+                    span.card-photo__bottom
+                      span.card-photo__title Подпись/описание к фотоальбому
+              .swiper-slide
+                article.card-photo
+                  a.card-photo__link(href="#")
+                    span.card-photo__top
+                      span.tag 14 фотографий
+                      span.card-photo__img
+                        img(src="img/card-photo/3.jpg", alt="alt")
+                    span.card-photo__bottom
+                      span.card-photo__title Подпись/описание к фотоальбому
+              .swiper-slide
+                article.card-photo
+                  a.card-photo__link(href="#")
+                    span.card-photo__top
+                      span.tag 14 фотографий
+                      span.card-photo__img
+                        img(src="img/card-photo/1.jpg", alt="alt")
+                    span.card-photo__bottom
+                      span.card-photo__title Подпись/описание к фотоальбому
+            .sect_nav
+              .slider_nav
+                button(type="button").slider_nav__left
+                  <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.8 6.69111C25.2418 6.69111 25.6 6.33294 25.6 5.89111C25.6 5.44929 25.2418 5.09111 24.8 5.09111L24.8 5.89111L24.8 6.69111ZM0.234301 5.32543C-0.0781173 5.63785 -0.0781174 6.14438 0.234301 6.4568L5.32547 11.548C5.63789 11.8604 6.14442 11.8604 6.45684 11.548C6.76926 11.2355 6.76926 10.729 6.45684 10.4166L1.93136 5.89111L6.45684 1.36563C6.76926 1.05321 6.76926 0.546677 6.45684 0.234258C6.14442 -0.0781619 5.63789 -0.078162 5.32547 0.234257L0.234301 5.32543ZM24.8 5.89111L24.8 5.09111L0.799988 5.09111L0.799988 5.89111L0.799988 6.69111L24.8 6.69111L24.8 5.89111Z" fill="#141414"/>
+                  </svg>
+                button(type="button").slider_nav__right
+                  <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.799988 6.69111C0.35816 6.69111 -1.21803e-05 6.33294 -1.2219e-05 5.89111C-1.22576e-05 5.44929 0.35816 5.09111 0.799988 5.09111L0.799988 5.89111L0.799988 6.69111ZM25.3657 5.32543C25.6781 5.63785 25.6781 6.14438 25.3657 6.4568L20.2745 11.548C19.9621 11.8604 19.4556 11.8604 19.1431 11.548C18.8307 11.2355 18.8307 10.729 19.1431 10.4166L23.6686 5.89111L19.1431 1.36563C18.8307 1.05321 18.8307 0.546677 19.1431 0.234258C19.4556 -0.0781619 19.9621 -0.078162 20.2745 0.234257L25.3657 5.32543ZM0.799988 5.89111L0.799988 5.09111L24.8 5.09111L24.8 5.89111L24.8 6.69111L0.799988 6.69111L0.799988 5.89111Z" fill="#141414"/>
+                  </svg>
+              a(href="#").btn_all Все фотографии
+
+  section.sect
+    .container
+      .press_center-line
+        h2.press_center-line__title Видео
+        .press_center-line__box-swiper
+          .swiper-press_center-video.swiper.load
+            .swiper-wrapper
+              .swiper-slide
+                article.card-video
+                  button.card-video__btn.js-open-modal.js-open-video-iframe(data-modal-label="viewer-video" data-iframe-video="https://vkvideo.ru/video_ext.php?oid=-29043952&id=456240132&hash=b218fdd5b550ee82&hd=4")
+                    span Подпись/описание к видео
+                  .box-video
+                    span.play
+                      <svg id="videoPlay" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+                        <path d="M66 36C66 52.5685 52.5685 66 36 66C19.4315 66 6 52.5685 6 36C6 19.4315 19.4315 6 36 6C52.5685 6 66 19.4315 66 36Z" fill="white"/>
+                        <path d="M31.9507 47.2506L46.5757 37.8756C47.2757 37.4256 47.6257 36.8006 47.6257 36.0006C47.6257 35.2006 47.2757 34.5756 46.5757 34.1256L31.9507 24.7506C31.2007 24.2506 30.4377 24.2126 29.6617 24.6366C28.8857 25.0606 28.4987 25.7236 28.5007 26.6256V45.3756C28.5007 46.2756 28.8887 46.9386 29.6647 47.3646C30.4407 47.7906 31.2027 47.7526 31.9507 47.2506ZM36 66C31.85 66 27.9507 65.2126 24.3007 63.6366C20.6507 62.0606 17.4757 59.9236 14.7757 57.2256C12.0757 54.5276 9.93874 51.3526 8.36474 47.7006C6.79074 44.0486 6.002 40.148 6 36C5.998 31.852 6.78674 27.9526 8.36474 24.3006C9.94274 20.6486 12.0797 17.4736 14.7757 14.7756C17.4717 12.0776 20.6467 9.9406 24.3007 8.3646C27.9547 6.7886 31.854 6 36 6C40.146 6 44.0467 6.7886 47.7007 8.3646C51.3547 9.9406 54.5297 12.0776 57.2257 14.7756C59.9217 17.4736 62.0597 20.6486 63.6397 24.3006C65.2197 27.9526 66.006 31.852 66 36C65.994 40.148 65.2067 44.0486 63.6367 47.7006C62.0667 51.3526 59.9297 54.5276 57.2257 57.2256C54.5217 59.9236 51.3467 62.0616 47.7007 63.6396C44.0547 65.2176 40.154 66.004 36 66Z" fill="currentColor"/>
+                      </svg>
+                    img(src="img/card-video/1.jpg", alt="alt")
+                  .card-video__title Подпись/описание к видео
+
+              .swiper-slide
+                article.card-video
+                  button.card-video__btn.js-open-modal.js-open-video-iframe(data-modal-label="viewer-video" data-iframe-video="https://vkvideo.ru/video_ext.php?oid=-29043952&id=456240132&hash=b218fdd5b550ee82&hd=4")
+                    span Подпись/описание к видео
+                  .box-video
+                    span.play
+                      <svg id="videoPlay" xmlns="http://www.w3.org/2000/svg" width="72" height="72" viewBox="0 0 72 72" fill="none">
+                        <path d="M66 36C66 52.5685 52.5685 66 36 66C19.4315 66 6 52.5685 6 36C6 19.4315 19.4315 6 36 6C52.5685 6 66 19.4315 66 36Z" fill="white"/>
+                        <path d="M31.9507 47.2506L46.5757 37.8756C47.2757 37.4256 47.6257 36.8006 47.6257 36.0006C47.6257 35.2006 47.2757 34.5756 46.5757 34.1256L31.9507 24.7506C31.2007 24.2506 30.4377 24.2126 29.6617 24.6366C28.8857 25.0606 28.4987 25.7236 28.5007 26.6256V45.3756C28.5007 46.2756 28.8887 46.9386 29.6647 47.3646C30.4407 47.7906 31.2027 47.7526 31.9507 47.2506ZM36 66C31.85 66 27.9507 65.2126 24.3007 63.6366C20.6507 62.0606 17.4757 59.9236 14.7757 57.2256C12.0757 54.5276 9.93874 51.3526 8.36474 47.7006C6.79074 44.0486 6.002 40.148 6 36C5.998 31.852 6.78674 27.9526 8.36474 24.3006C9.94274 20.6486 12.0797 17.4736 14.7757 14.7756C17.4717 12.0776 20.6467 9.9406 24.3007 8.3646C27.9547 6.7886 31.854 6 36 6C40.146 6 44.0467 6.7886 47.7007 8.3646C51.3547 9.9406 54.5297 12.0776 57.2257 14.7756C59.9217 17.4736 62.0597 20.6486 63.6397 24.3006C65.2197 27.9526 66.006 31.852 66 36C65.994 40.148 65.2067 44.0486 63.6367 47.7006C62.0667 51.3526 59.9297 54.5276 57.2257 57.2256C54.5217 59.9236 51.3467 62.0616 47.7007 63.6396C44.0547 65.2176 40.154 66.004 36 66Z" fill="currentColor"/>
+                      </svg>
+                    img(src="img/card-video/2.jpg", alt="alt")
+                  .card-video__title Подпись/описание к видео
+
+            .sect_nav
+              .slider_nav
+                button(type="button").slider_nav__left
+                  <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24.8 6.69111C25.2418 6.69111 25.6 6.33294 25.6 5.89111C25.6 5.44929 25.2418 5.09111 24.8 5.09111L24.8 5.89111L24.8 6.69111ZM0.234301 5.32543C-0.0781173 5.63785 -0.0781174 6.14438 0.234301 6.4568L5.32547 11.548C5.63789 11.8604 6.14442 11.8604 6.45684 11.548C6.76926 11.2355 6.76926 10.729 6.45684 10.4166L1.93136 5.89111L6.45684 1.36563C6.76926 1.05321 6.76926 0.546677 6.45684 0.234258C6.14442 -0.0781619 5.63789 -0.078162 5.32547 0.234257L0.234301 5.32543ZM24.8 5.89111L24.8 5.09111L0.799988 5.09111L0.799988 5.89111L0.799988 6.69111L24.8 6.69111L24.8 5.89111Z" fill="#141414"/>
+                  </svg>
+                button(type="button").slider_nav__right
+                  <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.799988 6.69111C0.35816 6.69111 -1.21803e-05 6.33294 -1.2219e-05 5.89111C-1.22576e-05 5.44929 0.35816 5.09111 0.799988 5.09111L0.799988 5.89111L0.799988 6.69111ZM25.3657 5.32543C25.6781 5.63785 25.6781 6.14438 25.3657 6.4568L20.2745 11.548C19.9621 11.8604 19.4556 11.8604 19.1431 11.548C18.8307 11.2355 18.8307 10.729 19.1431 10.4166L23.6686 5.89111L19.1431 1.36563C18.8307 1.05321 18.8307 0.546677 19.1431 0.234258C19.4556 -0.0781619 19.9621 -0.078162 20.2745 0.234257L25.3657 5.32543ZM0.799988 5.89111L0.799988 5.09111L24.8 5.09111L24.8 5.89111L24.8 6.69111L0.799988 6.69111L0.799988 5.89111Z" fill="#141414"/>
+                  </svg>
+              a(href="#").btn_all Все видео
+
+  section.sect.box-media-contacts
+    .container
+      .box-media-contacts__content
+        .box-media-contacts__top
+          h2.box-media-contacts__title Контакты для СМИ
+          p.box-media-contacts__desc Завод ООО "Электрощит-К°" придерживается политики открытости для средств массовой информации. Одной из главных задач пресс-центра является распространение актуальной и достоверной информации о деятельности Группы и её активов.
+        .box-media-contacts__bottom
+          .media-contacts
+            p.media-contacts__desc Телефон и e-mail <br>для контактов <br>представителей СМИ
+            ul.media-contacts__list
+              li
+                a.link-media(href="tel:+7 (495) 011-05-00") +7 (495) 011-05-00
+              li
+                a.link-media(href="info@tf-el.ru") info@tf-el.ru
+
+
+

@@ -1,0 +1,167 @@
+.detail-product {
+  display: flex;
+  gap: 24px;
+  @include max1920 {
+    gap: 20px;
+  }
+  @include max1024 {
+    gap: 24px;
+    flex-direction: column-reverse;
+  }
+  &__left {
+    width: calc(50% - 12px);
+    @include max1920 {
+      width: calc(50% - 10px);
+    }
+    @include max1024 {
+      width: 100%;
+    }
+  }
+  &__right {
+    width: calc(50% - 12px);
+    @include max1920 {
+      width: calc(50% - 10px);
+    }
+    @include max1024 {
+      width: 100%;
+    }
+  }
+  .product-list {
+    &__description {
+      &-title {
+        margin-bottom: 24px;
+        font-size: 28px;
+        @include max1920 {
+          font-size: 24px;
+        }
+        @include max1024 {
+          margin-bottom: 20px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  .box-logo {
+    @include max1920 {
+      margin: 28px 0;
+      justify-content: center;
+    }
+    .img {
+      @include max1920 {
+        width: calc(164 / 478 * 100%);
+      }
+      @include max1024 {
+        width: 100%;
+      }
+    }
+    .text {
+      @include max1920 {
+        font-size: 18px;
+        line-height: 131%;
+        width: calc(264 / 478 * 100%);
+      }
+      @include max1024 {
+        width: 100%;
+        font-size: 20px;
+      }
+      br {
+        display: none;
+        @include max1920 {
+          display: block;
+        }
+        @include max1024 {
+          display: none;
+        }
+      }
+    }
+    
+  }
+
+  &__description {
+    *:not(:last-child) {
+      margin-bottom: 24px;
+      @include max1920 {
+        margin-bottom: 20px;
+      }
+    }
+    h4 {
+      color: var(--black, #141414);
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 130%;
+      @include max1920 {
+        font-size: 18px;
+      }
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      color: var(--black, #141414);
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+      gap: 16px;
+      @include max1920 {
+        font-size: 17px;
+      }
+      @include max1024 {
+        font-size: 16px;
+      }
+      li {
+        margin: 0 !important;
+      }
+    }
+  }
+
+  &__wrapper {
+    position: sticky;
+    top: 132px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: var(--gray-80, #EDEDED);
+    @include max1024 {
+      position: static;
+      top: auto;
+    }
+  }
+
+  &__top {
+    padding: 48px 36px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: var(--gray-10, #F7F7F7);
+    @include max1920 {
+      padding: 36px 24px;
+    }
+    @include max1024 {
+      padding: 24px;
+    }
+  }
+
+  &__box-swiper {
+    width: 452px;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+    @include max1920 {
+      width: 430px;
+    }
+    @include max1024 {
+      width: 280px;
+    }
+  }
+  
+  &__group-links {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @include max1920 {
+      gap: 16px;
+    }
+  }
+}

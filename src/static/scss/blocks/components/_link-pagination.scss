@@ -1,0 +1,31 @@
+.link-pagination {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  color: var(--black, #141414);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background-color: var(--gray-50, #F5F5F5);
+  transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  &:focus-visible,
+  &:focus {
+    outline: none;
+  }
+  @include max1024 {
+    flex: 1;
+    width: auto;
+    min-width: 52px;
+  }
+  @include min1024 {
+    &:focus-visible,
+    &:hover {
+      background-color: $green;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.link-open {
+  width: fit-content;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  color: $black;
+  font-size: 16px;
+  line-height: 120%;
+  transition: color 0.3s ease-in-out;
+  .svg {
+    margin: 1px;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    background-color: $black;
+    color: $white;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  }
+  &:focus-visible,&:focus {
+    outline: none;
+  }
+  @include min1024 {
+    &:focus-visible,&:hover {
+      color: $green;
+      .svg {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+}

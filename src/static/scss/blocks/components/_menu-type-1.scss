@@ -1,0 +1,177 @@
+.menu-type-1 {
+  position: relative;
+  width: 100%;
+  @include max1920 {
+    width: 478px;
+    max-width: 100%;
+  }
+  @include max1024 {
+    width: 100%;
+  }
+  &__btn-open {
+    display: none;
+    position: relative;
+    z-index: 1;
+    margin: 8px 9px;
+    padding: 12px;
+    width: calc(100% - 20px);
+    gap: 30px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    color: var(--black, #141414);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    background-color: var(--gray-10, #F7F7F7);
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    @include max1920 {
+      display: flex;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: -10px;
+      border-radius: 24px;
+      background-color: var(--gray-10, #F7F7F7);
+      transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    }
+    .svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-color: var(--green, #00CB62);
+      color: var(--white, #FFF);
+    }
+    &:focus-visible,&:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,&:hover {
+        background-color: var(--gray-80, #EDEDED);
+        &::before {
+          background-color: var(--gray-80, #EDEDED);
+        }
+      }
+    }
+  }
+  &__content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 24px;
+    background-color: var(--gray-10, #F7F7F7);
+    @include max1920 {
+      padding: 10px;
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      left: 0;
+      right: 0;
+      top: -10px;
+      z-index: 2;
+      transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+      &.active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    @include max1024 {
+      padding: 8px 9px;
+      top: -8px;
+    }
+  }
+  &__tab {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: background-color 0.4s ease-in-out;
+    &:has(.menu-type-1__tab-btn.active) {
+      background-color: var(--gray-80, #EDEDED);
+    }
+  }
+  &__tab-btn {
+    cursor: pointer;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 20px;
+    color: var(--black, #141414);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    background-color: transparent;
+    &.active {
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+    .svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-color: var(--green, #00CB62);
+      color: var(--white, #FFF);
+    }
+    svg {
+      transition: transform 0.4s ease-in-out;
+    }
+  }
+  &__tab-info {
+    display: none;
+    &.active {
+      display: block;
+      animation: heightIn 0.6s ease-out;
+    }
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__tab-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px 12px;
+    min-height: 46px;
+    color: var(--black, #141414);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    &.active {
+      background-color: var(--gray-100, #E5E5E5);
+      color: var(--green, #00CB62);
+    }
+    &:focus-visible,&:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,&:hover {
+        background-color: var(--gray-100, #E5E5E5);
+        color: var(--green, #00CB62);
+      }
+    }
+  }
+}
+
+@keyframes heightIn {
+  0% { height: 0; }
+  100% { height: auto; }
+}

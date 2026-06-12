@@ -1,0 +1,44 @@
+.box-logo {
+  display: flex;
+  align-items: center;
+  margin: 36px 0;
+  padding: 24px 0;
+  border-radius: 24px;
+  background-color: $gray_10;
+  color: var(--black, #141414);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 131%;
+  @include max1024 {
+    padding: 24px 14px;
+    margin: 24px 0;
+    flex-direction: column;
+    align-items: start;
+  }
+  .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(224 / 672 * 100%);
+    border-right: 1px solid #64646433;
+    @include max1024 {
+      width: 100%;
+      justify-content: start;
+      border-right: none;
+      border-bottom: 1px solid #64646433;
+      padding-bottom: 16px;
+    }
+  }
+  .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(448 / 672 * 100%);
+    @include max1024 {
+      width: 100%;
+      justify-content: start;
+      padding-top: 16px;
+    }
+  }
+}

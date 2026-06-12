@@ -1,0 +1,34 @@
+.card-detail-product {
+  width: 100%;
+  height: 428px;
+  min-height: 428px;
+  max-height: 428px;
+  overflow: hidden;
+  @include max1920 {
+    height: 332px;
+    min-height: 332px;
+    max-height: 332px;
+  }
+  @include max1024 {
+    height: 232px;
+    min-height: 232px;
+    max-height: 232px;
+  }
+  img {
+    width: 100%;
+    height: 428px;
+    min-height: 428px;
+    max-height: 428px;
+    object-fit: cover;
+    @include max1920 {
+      height: 332px;
+      min-height: 332px;
+      max-height: 332px;
+    }
+    @include max1024 {
+      height: 232px;
+      min-height: 232px;
+      max-height: 232px;
+    }
+  }
+}

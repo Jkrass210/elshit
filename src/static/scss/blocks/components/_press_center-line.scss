@@ -1,0 +1,59 @@
+.press_center-line {
+  &__title {
+    margin-bottom: 28px;
+    color: var(--black, #141414);
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    @include max1920 {
+      margin-bottom: 24px;
+      font-size: 24px;
+    }
+    @include max1024 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+  }
+  &__content {
+    display: flex;
+    gap: 24px;
+    @include max1920 {
+      gap: 16px;
+    }
+    @include max1024 {
+      flex-direction: column;
+    }
+    .card-brandbook {
+      width: calc(672 / 1368 * 100%);
+      @include max1920 {
+        width: calc(413 / 976 * 100%);
+      }
+      @include max1024 {
+        width: 100%;
+      }
+    }
+    .card-logo {
+      width: calc(324 / 1368 * 100%);
+      @include max1920 {
+        width: calc(270 / 976 * 100%);
+      }
+      @include max1024 {
+        width: 100%;
+      }
+    }
+  }
+  .h2 {
+    margin-bottom: 36px;
+    @include max1200 {
+      margin-bottom: 28px;
+    }
+    @include max1024 {
+      margin-bottom: 24px;
+    }
+  }
+}
+
+section.sect:has(.press_center-line) {
+  overflow: hidden;
+}

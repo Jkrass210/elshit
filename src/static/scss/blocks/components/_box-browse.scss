@@ -1,0 +1,50 @@
+.box-browse {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px;
+  border-radius: 24px;
+  background-color: var(--gray-10, #F7F7F7);
+  @include max1920 {
+    padding: 22px 24px;
+  }
+  h4 {
+    color: var(--black, #141414);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    @include max1920 {
+      font-size: 17px;
+    }
+  }
+  a {
+    width: 200px;
+    max-width: 100%;
+    padding: 10px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    color: var(--black, #141414);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    background-color: var(--gray-100, #E5E5E5);
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    @include max1920 {
+      width: auto;
+    }
+    &:focus-visible, &:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible, &:hover {
+        background-color: $green;
+        color: $white;
+      }
+    }
+  }
+}

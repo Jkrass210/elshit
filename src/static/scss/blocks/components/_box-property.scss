@@ -1,0 +1,18 @@
+.box-property {
+  flex: 1 1 calc(50% - 8px);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+
+  .name {
+    color: var(--gray-200, #646464);
+  }
+
+  .info {
+    color: var(--black, #141414);
+  }
+}

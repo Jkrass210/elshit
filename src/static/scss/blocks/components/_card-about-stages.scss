@@ -1,0 +1,33 @@
+.card-about-stages {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  @include max1200 {
+    padding: 36px;
+  }
+  @include max1024 {
+    padding: 56px 0 0 0;
+    gap: 16px;
+  }
+  &__title {
+    color: #000;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include max1024 {
+      font-size: 18px;
+    }
+  }
+  &__text {
+    color: var(--black, #141414);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @include max1024 {
+      font-size: 16px;
+    }
+  }
+}

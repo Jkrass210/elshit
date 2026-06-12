@@ -1,0 +1,6 @@
+{
+  "[pug]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.documentSelectors": ["**/*.pug"]
+}

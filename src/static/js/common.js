@@ -3,133 +3,9 @@ $(function () {
     const DOC = $(document);
     const WIN = $(window);
 
-    /*function validateForm($form, options) {
-        const settings = $.extend({
-            defaultMessage: 'Пожалуйста, заполните это поле',
-            phoneMessage: 'Введите полный номер телефона (11 цифр)',
-            checkboxMessage: 'Необходимо согласие на обработку данных',
-            messageClass: 'field-message',
-            errorClass: 'error',
-            validClass: 'valid',
-            showMessages: true // глобальная настройка (если true, но у поля false – сообщение не выводится)
-        }, options);
-
-        let isValid = true;
-
-        // 1. Текстовые поля и textarea
-        const $fields = $form.find(`
-        input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):not([type="button"]):not([type="submit"]):not([data-validate="false"]),
-        textarea:not([data-validate="false"])
-    `);
-
-        $fields.each(function () {
-            const $field = $(this);
-            const $wrapper = $field.closest('.field_set');
-            const value = $field.val() || '';
-            const isPhone = $field.hasClass('mask-phone');
-
-            // Определяем, нужно ли показывать сообщение для этого поля
-            let showMessageForField = settings.showMessages;
-            if ($field.is('[data-show-message]')) {
-                showMessageForField = $field.data('show-message') !== false; // "false" (строка) или false – не показывать
-            }
-
-            let valid = false;
-            let errorMessage = settings.defaultMessage;
-
-            if ($field.data('error-message')) {
-                errorMessage = $field.data('error-message');
-            } else if (isPhone) {
-                errorMessage = settings.phoneMessage;
-            }
-
-            if (isPhone) {
-                const digits = value.replace(/\D/g, '');
-                valid = (digits.length === 11);
-            } else {
-                valid = (value.trim() !== '');
-            }
-
-            // Удаляем старое сообщение
-            $(`.${settings.messageClass}`, $wrapper).remove();
-
-            // Добавляем классы
-            if ($wrapper.length) {
-                $wrapper.removeClass(settings.errorClass + ' ' + settings.validClass);
-                $wrapper.addClass(valid ? settings.validClass : settings.errorClass);
-                if (!valid && showMessageForField) {
-                    $wrapper.append(`<div class="${settings.messageClass}">${errorMessage}</div>`);
-                }
-            } else {
-                $field.removeClass(settings.errorClass + ' ' + settings.validClass);
-                $field.addClass(valid ? settings.validClass : settings.errorClass);
-                if (!valid && showMessageForField) {
-                    $field.after(`<div class="${settings.messageClass}">${errorMessage}</div>`);
-                }
-            }
-
-            if (!valid) isValid = false;
-        });
-
-        // 2. Чекбокс согласия
-        const $checkbox = $form.find('.filed_checkbox input[type="checkbox"]:not([data-validate="false"])');
-        if ($checkbox.length) {
-            const $checkboxWrapper = $checkbox.closest('.filed_checkbox');
-            let checkboxValid = $checkbox.prop('checked');
-
-            let showMessageForCheckbox = settings.showMessages;
-            if ($checkbox.is('[data-show-message]')) {
-                showMessageForCheckbox = $checkbox.data('show-message') !== false;
-            }
-
-            $(`.${settings.messageClass}`, $checkboxWrapper).remove();
-
-            if ($checkboxWrapper.length) {
-                $checkboxWrapper.removeClass(settings.errorClass + ' ' + settings.validClass);
-                $checkboxWrapper.addClass(checkboxValid ? settings.validClass : settings.errorClass);
-                if (!checkboxValid && showMessageForCheckbox) {
-                    $checkboxWrapper.append(`<div class="${settings.messageClass}">${settings.checkboxMessage}</div>`);
-                }
-            } else {
-                $checkbox.removeClass(settings.errorClass + ' ' + settings.validClass);
-                $checkbox.addClass(checkboxValid ? settings.validClass : settings.errorClass);
-                if (!checkboxValid && showMessageForCheckbox) {
-                    $checkbox.after(`<div class="${settings.messageClass}">${settings.checkboxMessage}</div>`);
-                }
-            }
-
-            if (!checkboxValid) isValid = false;
-        }
-        // 3. Файлы
-        const $files = $form.find('.field_upload input[type="file"]:not([data-validate="false"])');
-        if ($files.length) {
-            const $filesWrapper = $files.closest('.field_upload');
-            let filesValid = true;
-            $files.each(function () {
-                const $file = $(this);
-                const file = $file.files[0];
-                if (!file) {
-                    filesValid = false;
-                    return;
-                }
-                if (file.size > 5 * 1024 * 1024) {
-                    filesValid = false;
-                }
-            });
-            if (!filesValid) {
-                $filesWrapper.addClass('error');
-            } else {
-                $filesWrapper.addClass('show');
-            }
-            if (!filesValid) isValid = false;
-        }
-
-        return isValid;
-    }*/
-
     if ($('.press_center .swiper').length > 0) {
         const swiper_press_center = new Swiper('.press_center .swiper', {
-            loop: true,
+            //loop: true,
             spaceBetween: 16,
             // autoHeight: true,
             navigation: {
@@ -157,7 +33,6 @@ $(function () {
             }
         });
     }
-
     if ($('.contacts_info .swiper').length > 0) {
         const swiper_contacts_info = new Swiper('.contacts_info .swiper', {
             loop: true,
@@ -228,6 +103,118 @@ $(function () {
 
         swiper_reviews_partner.init();
     }
+    // Перебираем все .swiper-press_center-line.swiper на странице
+    const pressCenterLineSwipers = document.querySelectorAll('.swiper-press_center-line.swiper');
+    if (pressCenterLineSwipers.length > 0) {
+        pressCenterLineSwipers.forEach(swiperEl => {
+            //swiperEl.classList.add('load');
+
+            const swiperInstance = new Swiper(swiperEl, {
+                init: false,
+                spaceBetween: 16,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: swiperEl.querySelector('.slider_nav__right'),
+                    prevEl: swiperEl.querySelector('.slider_nav__left'),
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    480: {
+                        slidesPerView: 1.4,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 2.3,
+                        spaceBetween: 20,
+                    },
+                    1440: {
+                        slidesPerView: 3,
+                        spaceBetween: 24,
+                    }
+                },
+                on: {
+                    init: function () {
+                        swiperEl.classList.remove('load');
+                    }
+                }
+            });
+
+            swiperInstance.init();
+        });
+    }
+    const pressCenterVideoSwipers = document.querySelectorAll('.swiper-press_center-video.swiper');
+    if (pressCenterVideoSwipers.length > 0) {
+        pressCenterVideoSwipers.forEach(swiperEl => {
+            //swiperEl.classList.add('load');
+
+            const swiperInstance = new Swiper(swiperEl, {
+                init: false,
+                spaceBetween: 16,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: swiperEl.querySelector('.slider_nav__right'),
+                    prevEl: swiperEl.querySelector('.slider_nav__left'),
+                },
+                breakpoints: {
+                    0: {
+                        slidesPerView: 1,
+                    },
+                    800: {
+                        slidesPerView: 2,
+                        spaceBetween: 16,
+                    },
+                    1023: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    1440: {
+                        slidesPerView: 2,
+                        spaceBetween: 24,
+                    }
+                },
+                on: {
+                    init: function () {
+                        swiperEl.classList.remove('load');
+                    }
+                }
+            });
+
+            swiperInstance.init();
+        });
+    }
+    const detailNewsSwipers = document.querySelectorAll('.swiper-detail-news.swiper');
+    if (detailNewsSwipers.length > 0) {
+        detailNewsSwipers.forEach(swiperEl => {
+            const swiperInstance = new Swiper(swiperEl, {
+                init: false,
+                slidesPerView: 1,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 600,
+                observer: true,
+                observeParents: true,
+                pagination: {
+                    el: swiperEl.querySelector('.swiper-type-1-pagination'),
+                    clickable: true,
+                },
+                on: {
+                    init: function () {
+                        swiperEl.classList.remove('load');
+                    }
+                }
+            });
+
+            swiperInstance.init();
+        });
+    }
     if ($('.swiper-reviews-customers.swiper').length > 0) {
         const swiperEl = document.querySelector('.swiper-reviews-customers.swiper');
 
@@ -294,7 +281,105 @@ $(function () {
             swiperInstance.init();
         });
     }
+    if ($('.swiper-detail-product.swiper').length > 0) {
+        const sliders = document.querySelectorAll('.swiper-detail-product.swiper');
 
+        sliders.forEach(swiperEl => {
+            const swiperInstance = new Swiper(swiperEl, {
+                init: false,
+                spaceBetween: 0,
+                slidesPerView: '1',
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 600,
+                observer: true,
+                observeParents: true,
+                pagination: {
+                    el: '.swiper-detail-product .swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () {
+                        swiperEl.classList.remove('load');
+                    }
+                }
+            });
+
+            swiperInstance.init();
+        });
+    }
+    if ($('.swiper-unique-decisions.swiper').length > 0) {
+        const sliders = document.querySelectorAll('.swiper-unique-decisions.swiper');
+
+        sliders.forEach(swiperEl => {
+            const swiperInstance = new Swiper(swiperEl, {
+                init: false,
+                spaceBetween: 0,
+                slidesPerView: '1',
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                speed: 600,
+                observer: true,
+                observeParents: true,
+                navigation: {
+                    nextEl: '.swiper-unique-decisions-nav .link-pagination.--next',
+                    prevEl: '.swiper-unique-decisions-nav .link-pagination.--prev',
+                },
+                pagination: {
+                    el: '.swiper-unique-decisions-pagination',
+                    clickable: true,
+                },
+               on: {
+                    init: function () {
+                        swiperEl.classList.remove('load');
+                    }
+                }
+            });
+
+            swiperInstance.init();
+        });
+    }
+    if ($('.swiper-btn-gallery.swiper').length > 0) {
+        const sliders = document.querySelectorAll('.swiper-btn-gallery.swiper');
+
+        sliders.forEach(swiperEl => {
+            const swiperInstance = new Swiper(swiperEl, {
+                init: false,
+                spaceBetween: 8,
+                slidesPerView: 'auto',
+                observer: true,
+                observeParents: true,
+                breakpoints: {
+                    1024: {
+                        spaceBetween: 12,
+                    },
+                    1200: {
+                        spaceBetween: 8,
+                    }
+                },
+                /* speed: 600, */
+                /* navigation: {
+                    nextEl: '.swiper-unique-decisions-nav .link-pagination.--next',
+                    prevEl: '.swiper-unique-decisions-nav .link-pagination.--prev',
+                },
+                pagination: {
+                    el: '.swiper-unique-decisions-pagination',
+                    clickable: true,
+                }, */
+               on: {
+                    init: function () {
+                        swiperEl.classList.remove('load');
+                    }
+                }
+            });
+
+            swiperInstance.init();
+        });
+    }
     let swiper_map = null;
     if ($('.map .swiper').length > 0) {
         swiper_map = new Swiper('.map .swiper', {
@@ -507,7 +592,23 @@ $(function () {
         }
     }
 
+    function clearVideoIframe($modal) {
+        const $iframe = $modal.find('.js-box-video-iframe iframe');
+        if ($iframe.length) {
+            $iframe.attr('src', '');
+        }
+    }
+
+    function clearViewerImg($modal) {
+        const $img = $modal.find('.js-box-img img');
+        if ($img.length) {
+            $img.attr('src', '');
+        }
+    }
+
     function closeModal(modal) {
+        clearVideoIframe(modal);
+        clearViewerImg(modal);
         modal.fadeOut(300, function () {
             resetForm(modal.find('form'));
         });
@@ -579,6 +680,45 @@ $(function () {
         $('.modal[data-modal-label="' + modalLabel + '"]').fadeIn(300);
     });
 
+    DOC.on('click', '.js-open-video-iframe', function () {
+        const videoSrc = $(this).attr('data-iframe-video');
+        const modalLabel = $(this).attr('data-modal-label');
+
+        if (!videoSrc || !modalLabel) return;
+
+        const $modal = $('.modal[data-modal-label="' + modalLabel + '"]');
+        const $iframe = $modal.find('.js-box-video-iframe iframe');
+
+        if (!$iframe.length) return;
+
+        $iframe.attr('src', videoSrc);
+    });
+
+    DOC.on('click', '.js-open-img-modal', function () {
+        const imgSrc = $(this).attr('data-img');
+        const modalLabel = $(this).attr('data-modal-label');
+
+        if (!imgSrc || !modalLabel) return;
+
+        const $modal = $('.modal[data-modal-label="' + modalLabel + '"]');
+        const $img = $modal.find('.js-box-img img');
+
+        if (!$img.length) return;
+
+        $img.attr('src', imgSrc);
+    });
+
+    DOC.on('keydown', function (e) {
+        if (e.key !== 'Escape') return;
+
+        $('.modal:visible').each(function () {
+            const $modal = $(this);
+            if ($modal.find('.js-box-video-iframe').length || $modal.find('.js-box-img').length) {
+                closeModal($modal);
+            }
+        });
+    });
+
 
     // map
 
@@ -637,10 +777,7 @@ $(function () {
 
         swiper_map.slideTo(itemId, 1);
     }
-
-
     /* создаем слайдер в модалке*/
-
     (function () {
         const galleries = document.querySelectorAll('.js-box-gallery');
         if (!galleries.length) return;
@@ -757,11 +894,8 @@ $(function () {
             return modal;
         }
     })();
-
     /* создаем слайдер в модалке*/
-
     /* проверка на высоту блока с текстом в отзывах и создание кнопки читать все*/
-
     (function () {
         const boxes = document.querySelectorAll('.js-box-control');
 
@@ -816,11 +950,8 @@ $(function () {
 
         init();
     })();
-
     /* проверка на высоту блока с текстом в отзывах и создание кнопки читать все*/
-
     /* создаем слайдер в модалке для отзывов */
-
     (function () {
         let modal = null;
         let mainSwiper = null;
@@ -990,12 +1121,8 @@ $(function () {
             return modal;
         }
     })();
-
     /* создаем слайдер в модалке для отзывов */
-
-
     /* валидация форм */
-
     (function () {
         console.log('Form validation module loaded');
 
@@ -1242,7 +1369,7 @@ $(function () {
             // =========================
             // УСПЕХ (UI переключение)
             // =========================
-            
+
         });
 
         // =========================
@@ -1266,7 +1393,658 @@ $(function () {
         });
 
     })();
-
     /* валидация форм */
+    /* табы первого типа */
+    (function initTabs1() {
+        const TAB_GROUPS = [
+            {
+                root: '.js-tabs-1',
+                btn: '.js-tabs-1-btn',
+                box: '.js-tabs-1-box',
+            },
+            {
+                root: '.js-tabs-1-map',
+                btn: '.js-tabs-1-btn-map',
+                box: '.js-tabs-1-box-map',
+            },
+        ];
 
+        function initTabGroup({ root, btn, box }) {
+            const tabs = document.querySelectorAll(root);
+            if (!tabs.length) return;
+
+            tabs.forEach(tab => {
+                const btns = tab.querySelectorAll(btn);
+                const boxes = tab.querySelectorAll(box);
+
+                if (!btns.length || !boxes.length) return;
+                if (btns.length !== boxes.length) return;
+
+                const clearActive = () => {
+                    btns.forEach(item => item.classList.remove('active'));
+                    boxes.forEach(item => item.classList.remove('active'));
+                };
+
+                btns.forEach((button, index) => {
+                    button.addEventListener('click', () => {
+                        clearActive();
+                        button.classList.add('active');
+                        boxes[index].classList.add('active');
+                    });
+                });
+
+                clearActive();
+                btns[0].classList.add('active');
+                boxes[0].classList.add('active');
+            });
+        }
+
+        TAB_GROUPS.forEach(initTabGroup);
+    })();
+    /* табы первого типа */
+    /* табы второго типа */
+    (function initTabs2() {
+        const containers = document.querySelectorAll(".js-tabs-type-2");
+
+        // Проверяем наличие контейнеров
+        if (containers.length === 0) {
+            console.warn(`Контейнеры с селектором "${".js-tabs-type-2-tab"}" не найдены`);
+            return;
+        }
+
+        containers.forEach(container => {
+            const tabs = container.querySelectorAll(".js-tabs-type-2-tab");
+            const buttons = container.querySelectorAll(".js-tabs-type-2-btn");
+            const contents = container.querySelectorAll(".js-tabs-type-2-info");
+
+            // Проверяем наличие всех элементов внутри контейнера
+            if (tabs.length === 0 || buttons.length === 0 || contents.length === 0) {
+            console.warn('Не все необходимые элементы найдены в контейнере');
+            return;
+            }
+
+            // Функция закрытия всех табов
+            function closeAllTabs() {
+            buttons.forEach(button => button.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            }
+
+            // Функция открытия таба
+            function openTab(button, content) {
+            closeAllTabs();
+            button.classList.add('active');
+            content.classList.add('active');
+            }
+
+            // Обработчики клика на кнопки
+            buttons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                const content = contents[index];
+                const isActive = button.classList.contains('active');
+
+                if (isActive) {
+                closeAllTabs();
+                } else {
+                openTab(button, content);
+                }
+            });
+            });
+
+            // Обработчик клавиши Esc
+            document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeAllTabs();
+            }
+            });
+        });
+                
+    })();
+    /* табы второго типа */
+    /* дропдаун 1 типа */
+    (function () {
+        function initDropDown1(options) {
+          const settings = Object.assign(
+            {
+              rootSelector: '.drop-down-1',
+              btnSelector: '.drop-down-1__btn',
+              boxSelector: '.drop-down-1__box',
+              activeClass: 'active',
+            },
+            options || {}
+          );
+      
+          const dropdowns = document.querySelectorAll(settings.rootSelector);
+      
+          if (!dropdowns.length) return;
+      
+          function closeAll() {
+            dropdowns.forEach(function (dropdown) {
+              const button = dropdown.querySelector(settings.btnSelector);
+              const box = dropdown.querySelector(settings.boxSelector);
+      
+              if (button) {
+                button.classList.remove(settings.activeClass);
+              }
+      
+              if (box) {
+                box.classList.remove(settings.activeClass);
+              }
+            });
+          }
+      
+          dropdowns.forEach(function (dropdown) {
+            const button = dropdown.querySelector(settings.btnSelector);
+            const box = dropdown.querySelector(settings.boxSelector);
+      
+            if (!button || !box) return;
+      
+            const closeBtn = box.querySelector('.js-close');
+      
+            function close() {
+              button.classList.remove(settings.activeClass);
+              box.classList.remove(settings.activeClass);
+      
+              document.removeEventListener('click', onOutsideClick);
+              document.removeEventListener('keydown', onEsc);
+            }
+      
+            function open() {
+              closeAll();
+      
+              button.classList.add(settings.activeClass);
+              box.classList.add(settings.activeClass);
+      
+              document.addEventListener('click', onOutsideClick);
+              document.addEventListener('keydown', onEsc);
+            }
+      
+            function onOutsideClick(e) {
+              if (!dropdown.contains(e.target)) {
+                close();
+              }
+            }
+      
+            function onEsc(e) {
+              if (e.key === 'Escape') {
+                close();
+              }
+            }
+      
+            if (closeBtn) {
+              closeBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                close();
+              });
+            }
+      
+            button.addEventListener('click', function (e) {
+              e.preventDefault();
+      
+              if (button.classList.contains(settings.activeClass)) {
+                close();
+              } else {
+                open();
+              }
+            });
+          });
+        }
+      
+        initDropDown1();
+      })();
+    /* дропдаун 1 типа */
+    /* скролл элемента */
+    (function ($) {
+        $(document).ready(function () {
+            $('.js-scroll-bg').each(function () {
+                var $el = $(this);
+
+                function checkScroll() {
+                    // Проверяем, есть ли скролл
+                    if ($el[0].scrollHeight <= $el[0].clientHeight) {
+                        // Контента мало, скролл не используется, удаляем классы
+                        $el.removeClass('start-scroll end-scroll');
+                        return;
+                    }
+
+                    // Проверяем позицию скролла
+                    if ($el.scrollTop() <= 1) {  // Маленький tolerance для top
+                        $el.addClass('start-scroll');
+                    } else {
+                        $el.removeClass('start-scroll');
+                    }
+
+                    // Для bottom используем tolerance из-за возможных округлений
+                    if ($el.scrollTop() + $el[0].clientHeight >= $el[0].scrollHeight - 1) {
+                        $el.addClass('end-scroll');
+                    } else {
+                        $el.removeClass('end-scroll');
+                    }
+                }
+
+                // Навешиваем обработчик скролла
+                $el.on('scroll', checkScroll);
+
+                // MutationObserver для отслеживания изменений в дочерних элементах (например, display: none -> block)
+                var observer = new MutationObserver(function (mutations) {
+                    mutations.forEach(function (mutation) {
+                        if (mutation.type === 'attributes' && (mutation.attributeName === 'style' || mutation.attributeName === 'class')) {
+                            checkScroll();
+                        }
+                    });
+                });
+
+                observer.observe($el[0], {
+                    attributes: true,
+                    subtree: true,
+                    attributeFilter: ['style', 'class']
+                });
+
+                // Первоначальная проверка
+                checkScroll();
+            });
+        });
+    })(jQuery);
+    /* скролл элемента */
+    /* подключаем карту */
+    (function () {
+        if (!document.getElementById('box-contacts-map')) return;
+
+        ymaps.ready(init);
+        function init() {
+            const isMobile = window.innerWidth <= 1000;
+            const center = isMobile
+                ? [54.390467, 35.740147] // центр для мобилки
+                : [54.390467, 35.740147]; // центр для десктопа
+            const iconSize = isMobile
+                ? [33, 43] // меньше иконка
+                : [37, 48];
+            const iconOffset = isMobile
+                ? [-15, -40]
+                : [-10, -20];
+            const map = new ymaps.Map("box-contacts-map", {
+                center: center,
+                zoom: 13,
+                controls: []
+            });
+            map.behaviors.disable('scrollZoom');
+            const placemark = new ymaps.Placemark(
+                [54.390467, 35.740147],
+                {
+                    hintContent: "Моя метка",
+                    balloonContent: "Описание"
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/local/icon.svg',
+                    iconImageSize: iconSize,
+                    iconImageOffset: iconOffset
+                }
+            );
+            map.geoObjects.add(placemark);
+        }
+    })();
+
+    (function () {
+        if (!document.getElementById('box-contacts-map-2')) return;
+
+        ymaps.ready(init);
+
+        function init() {
+            const isMobile = window.innerWidth <= 1000;
+            const iconSize = isMobile ? [33, 43] : [37, 48];
+            const iconOffset = isMobile ? [-15, -40] : [-10, -20];
+
+            // Координаты двух точек
+            const coords1 = [54.390467, 35.740147]; // существующий адрес
+            const coords2 = [53.892224, 27.504312]; // второй адрес
+
+            // Создаем карту с временным центром и зумом
+            const map = new ymaps.Map("box-contacts-map-2", {
+                center: coords1,
+                zoom: 5, // поставим небольшой зум, сразу потом заменим fitToBounds
+                controls: []
+            });
+            map.behaviors.disable('scrollZoom');
+
+            // Первый маркер
+            const placemark1 = new ymaps.Placemark(
+                coords1,
+                {
+                    hintContent: "Завод ООО «Электрощит-К°»",
+                    balloonContent: "249210, Россия, Калужская область, п.Бабынино, ул.Советская, 24"
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/local/icon.svg',
+                    iconImageSize: iconSize,
+                    iconImageOffset: iconOffset
+                }
+            );
+
+            // Второй маркер
+            const placemark2 = new ymaps.Placemark(
+                coords2,
+                {
+                    hintContent: "ЧУП «БелИНДУСТРИЯ»",
+                    balloonContent: "220036, г. Минск, ул. К. Либкнехта, 128 В, к. 4, 5"
+                },
+                {
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/local/icon.svg',
+                    iconImageSize: iconSize,
+                    iconImageOffset: iconOffset
+                }
+            );
+
+            map.geoObjects.add(placemark1);
+            map.geoObjects.add(placemark2);
+
+            // Автоматически масштабируем, чтобы обе точки были видны
+            const bounds = ymaps.geoQuery([placemark1, placemark2]).getBounds();
+            if (bounds) {
+                // Немного уменьшаем максимальный зум на мобильных для лучшей видимости
+                map.setBounds(bounds, {
+                    checkZoomRange: true,
+                    zoomMargin: isMobile ? 80 : 40
+                });
+            }
+        }
+    })();
+    /* подключаем карту */
+    /* цвет хедера */
+    (function () {
+        // Проверяем наличие необходимых элементов
+        const header = document.querySelector('.js-header');
+        const banner = document.querySelector('.js-main-banner');
+
+        if (!header || !banner) return;
+
+        // Функция для проверки позиции
+        function checkPosition() {
+            const headerRect = header.getBoundingClientRect();
+            const bannerRect = banner.getBoundingClientRect();
+
+            // Проверяем, виден ли banner в viewport
+            const isBannerVisible = bannerRect.top < window.innerHeight && bannerRect.bottom > 0;
+
+            // Если header находится над banner и banner виден
+            if (headerRect.bottom > bannerRect.top && isBannerVisible) {
+                header.classList.add('white');
+            } else {
+                header.classList.remove('white');
+            }
+        }
+
+        // Добавляем обработчик скролла
+        window.addEventListener('scroll', checkPosition);
+
+        // Вызываем проверку сразу при загрузке
+        checkPosition();
+    })();
+    /* цвет хедера */
+    /* создаем модалку чертежа */
+    (function () {
+        let modal = null;
+    
+        document.addEventListener('click', function (e) {
+            const trigger = e.target.closest('.js-trigger-look-drawings');
+            if (!trigger) return;
+    
+            e.preventDefault();
+    
+            const src = trigger.getAttribute('data-img');
+            if (!src) return;
+    
+            openModal(src);
+        });
+    
+        function openModal(imageSrc) {
+            destroyModal();
+    
+            modal = createModal(imageSrc);
+            document.body.appendChild(modal);
+    
+            modal.classList.add('active');
+        }
+    
+        function destroyModal() {
+            if (modal) {
+                modal.remove();
+                modal = null;
+            }
+        }
+    
+        function createModal(imageSrc) {
+            const root = document.createElement('div');
+            root.className = 'modal-gallery drawings'; // при желании уточните BEM под свои стили
+    
+            const content = document.createElement('div');
+            content.className = 'modal-gallery__content';
+    
+            const closeBtn = document.createElement('button');
+            closeBtn.type = 'button';
+            closeBtn.className = 'modal-gallery__close modal-gallery-close';
+            closeBtn.setAttribute('aria-label', 'Закрыть');
+            closeBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M6.65039 6.65L0.650391 0.650002M6.65039 6.65L12.6504 12.65M6.65039 6.65L12.6504 0.650002M6.65039 6.65L0.650391 12.65" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            `;
+    
+            const wrap = document.createElement('div');
+            wrap.className = 'modal-gallery__drawings-inner';
+    
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.alt = '';
+            img.loading = 'lazy';
+            img.decoding = 'async';
+    
+            wrap.appendChild(img);
+            content.appendChild(closeBtn);
+            content.appendChild(wrap);
+            root.appendChild(content);
+    
+            root.addEventListener('click', function (e) {
+                if (
+                    e.target.classList.contains('modal-gallery') ||
+                    e.target.classList.contains('modal-gallery-close')
+                ) {
+                    destroyModal();
+                }
+            });
+    
+            document.addEventListener('keydown', function escHandler(e) {
+                if (e.key === 'Escape') {
+                    destroyModal();
+                    document.removeEventListener('keydown', escHandler);
+                }
+            });
+    
+            return root;
+        }
+    })();
+    /* создаем модалку чертежа */
+    /* кнопка копирует ссылку текущей страницы */
+    DOC.on('click', '.js-copy-link-news', function (e) {
+        e.preventDefault();
+
+        const url = window.location.href;
+        const $btn = $(this);
+        const $text = $btn.find('.text');
+        const originalText = $text.length ? $text.text() : '';
+
+        function showCopied() {
+            if (!$text.length) return;
+
+            $text.text('Скопировано');
+            setTimeout(function () {
+                $text.text(originalText);
+            }, 2000);
+        }
+
+        function fallbackCopy() {
+            const $input = $('<input>').val(url).css({
+                position: 'fixed',
+                opacity: 0,
+                pointerEvents: 'none',
+            });
+
+            $('body').append($input);
+            $input[0].select();
+
+            try {
+                document.execCommand('copy');
+                showCopied();
+            } catch (err) {}
+
+            $input.remove();
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(url).then(showCopied).catch(fallbackCopy);
+        } else {
+            fallbackCopy();
+        }
+    });
+     /* кнопка копирует ссылку текущей страницы */
+
+    /* модалка фотоальбома */
+    (function () {
+        let modal = null;
+        let swiper = null;
+
+        document.addEventListener('click', function (e) {
+            const btn = e.target.closest('.js-btn-card-photo-album');
+            if (!btn) return;
+
+            const list = btn.closest('.js-photo-album-list');
+            if (!list) return;
+
+            e.preventDefault();
+
+            const li = btn.closest('li');
+            if (!li) return;
+
+            const currentIndex = Array.prototype.indexOf.call(list.children, li);
+            if (currentIndex < 0) return;
+
+            if (!modal) {
+                modal = createModal(list);
+                document.body.appendChild(modal);
+
+                const swiperEl = modal.querySelector('.swiper-photo-album-modal.swiper');
+                const prevBtn = modal.querySelector('.slider_nav__left');
+                const nextBtn = modal.querySelector('.slider_nav__right');
+
+                if (!swiperEl) return;
+
+                swiper = new Swiper(swiperEl, {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    speed: 600,
+                    navigation: {
+                        prevEl: prevBtn,
+                        nextEl: nextBtn,
+                    },
+                    pagination: {
+                        el: '.photo-album-pagination',
+                        type: 'custom',
+                        renderCustom: function (swiper, current, total) {
+                            return `<span class="current">${current}</span> из <span class="total">${total}</span>`;
+                        }
+                    },
+                    observer: true,
+                    observeParents: true,
+                });
+           
+
+                function closeModal() {
+                    modal.classList.remove('active');
+                }
+
+                modal.addEventListener('click', function (ev) {
+                    const target = ev.target;
+
+                    if (
+                        target.classList.contains('modal-gallery') ||
+                        target.classList.contains('modal-gallery-close')
+                    ) {
+                        closeModal();
+                    }
+                });
+
+                document.addEventListener('keydown', function (ev) {
+                    if (ev.key === 'Escape' && modal.classList.contains('active')) {
+                        closeModal();
+                    }
+                });
+            }
+
+            modal.classList.add('active');
+
+            requestAnimationFrame(function () {
+                swiper.update();
+                swiper.slideTo(currentIndex, 0);
+            });
+        });
+
+        function createModal(list) {
+            const root = document.createElement('div');
+            root.className = 'modal-gallery photo-album';
+
+            const content = document.createElement('div');
+            content.className = 'modal-gallery__content';
+
+            const closeBtn = document.createElement('button');
+            closeBtn.type = 'button';
+            closeBtn.className = 'modal-gallery__close modal-gallery-close';
+            closeBtn.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M6.65039 6.65L0.650391 0.650002M6.65039 6.65L12.6504 12.65M6.65039 6.65L12.6504 0.650002M6.65039 6.65L0.650391 12.65" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            `;
+
+            const swiperEl = document.createElement('div');
+            swiperEl.className = 'swiper-photo-album-modal swiper';
+
+            const wrapper = document.createElement('div');
+            wrapper.className = 'swiper-wrapper';
+
+            list.querySelectorAll('.js-photo-album-item').forEach(function (item) {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.appendChild(item.cloneNode(true));
+                wrapper.appendChild(slide);
+            });
+
+            swiperEl.appendChild(wrapper);
+
+            const sectNav = document.createElement('div');
+            sectNav.className = 'sect_nav';
+            sectNav.innerHTML = `
+                <div class="slider_nav">
+                    <button type="button" class="slider_nav__left">
+                        <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24.8 6.69111C25.2418 6.69111 25.6 6.33294 25.6 5.89111C25.6 5.44929 25.2418 5.09111 24.8 5.09111L24.8 5.89111L24.8 6.69111ZM0.234301 5.32543C-0.0781173 5.63785 -0.0781174 6.14438 0.234301 6.4568L5.32547 11.548C5.63789 11.8604 6.14442 11.8604 6.45684 11.548C6.76926 11.2355 6.76926 10.729 6.45684 10.4166L1.93136 5.89111L6.45684 1.36563C6.76926 1.05321 6.76926 0.546677 6.45684 0.234258C6.14442 -0.0781619 5.63789 -0.078162 5.32547 0.234257L0.234301 5.32543ZM24.8 5.89111L24.8 5.09111L0.799988 5.09111L0.799988 5.89111L0.799988 6.69111L24.8 6.69111L24.8 5.89111Z" fill="#141414"/>
+                        </svg>
+                    </button>
+                    <button type="button" class="slider_nav__right">
+                        <svg width="26" height="12" viewBox="0 0 26 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0.799988 6.69111C0.35816 6.69111 -1.21803e-05 6.33294 -1.2219e-05 5.89111C-1.22576e-05 5.44929 0.35816 5.09111 0.799988 5.09111L0.799988 5.89111L0.799988 6.69111ZM25.3657 5.32543C25.6781 5.63785 25.6781 6.14438 25.3657 6.4568L20.2745 11.548C19.9621 11.8604 19.4556 11.8604 19.1431 11.548C18.8307 11.2355 18.8307 10.729 19.1431 10.4166L23.6686 5.89111L19.1431 1.36563C18.8307 1.05321 18.8307 0.546677 19.1431 0.234258C19.4556 -0.0781619 19.9621 -0.078162 20.2745 0.234257L25.3657 5.32543ZM0.799988 5.89111L0.799988 5.09111L24.8 5.09111L24.8 5.89111L24.8 6.69111L0.799988 6.69111L0.799988 5.89111Z" fill="#141414"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="photo-album-pagination"></div>
+            `;
+
+            content.appendChild(closeBtn);
+            content.appendChild(swiperEl);
+            content.appendChild(sectNav);
+            root.appendChild(content);
+
+            return root;
+        }
+    })();
+    /* модалка фотоальбома */
 });

@@ -1,0 +1,53 @@
+.static-text {
+  color: $black;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 135%;
+
+  @include min1024 {
+    font-size: 17px;
+  }
+
+  @include min1920 {
+    font-size: 18px;
+  }
+
+  *:not(:last-child) {
+    margin-bottom: 16px;
+    @include min1920 {
+      margin-bottom: 20px;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    @include min1024 {
+      gap: 11px;
+    }
+    @include min1920 {
+      gap: 13px;
+    }
+    li {
+      position: relative;
+      padding-left: 33px;
+      margin-bottom: 0 !important;
+      @include min1920 {
+
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 8px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        flex-shrink: 0;
+        background-color: $green;
+        border-radius: 100%;
+      }
+    }
+  }
+}

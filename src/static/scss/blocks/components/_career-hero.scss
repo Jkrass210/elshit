@@ -1,0 +1,72 @@
+.career-hero {
+  &__content {
+    padding: 24px;
+    position: relative;
+    background-color: $gray_10;
+    border-radius: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include min1024 {
+      gap: 24px;
+      padding: 24px calc(522 / 976 * 100%) 24px 24px;
+    }
+    @include min1920 {
+      gap: 28px;
+      padding: 40px calc(696 / 1368 * 100%) 40px 40px;
+    }
+  }
+  &__title {
+    color: $black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    @include min1024 {
+      font-size: 24px;
+    }
+    @include min1920 {
+      font-size: 28px;
+    }
+  }
+  &__middle {
+    position: static;
+    width: 100%;
+    @include min1024 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: calc(502 / 976 * 100%);
+    }
+    @include min1920 {
+      width: calc(672 / 1368 * 100%);
+    }
+  }
+  &__box-img {
+    pointer-events: none;
+    width: 100%;
+    height: 216px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 28px;
+    overflow: hidden;
+    @include min1024 {
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    @include min1920 {
+      gap: 36px;
+    }
+  }
+}

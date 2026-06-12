@@ -10,6 +10,7 @@
     "author": "Berzeg_07",
     "license": "ISC",
     "devDependencies": {
+        "@prettier/plugin-pug": "^3.4.2",
         "browser-sync": "^2.27.7",
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^8.0.0",
@@ -29,6 +30,7 @@
         "gulp-sourcemaps": "^3.0.0",
         "gulp-svg-sprite": "^1.5.0",
         "gulp-svgmin": "^4.1.0",
+        "prettier": "^3.8.3",
         "sass": "^1.99.0",
         "swiper": "^10.2.0"
     },

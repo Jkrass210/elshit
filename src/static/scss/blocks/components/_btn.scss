@@ -3,7 +3,7 @@
     @include flex-center;
     cursor: pointer;
     border-radius: $br14;
-    background-color: $gray_50;
+    background-color: #EDEDED;
     height: 44px;
     transition: 250ms ease;
     @include min1024 {
@@ -210,6 +210,50 @@
                     background-color: $gray_200;
                 }
             }
+        }
+    }
+    &-copy-news {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        height: 32px;
+        padding: 6px 12px;
+        color: var(--black, #141414);
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+        border-radius: 1000px;
+        background-color: var(--gray-10, #F7F7F7);
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        .svg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        &:focus-visible,&:focus {
+            outline: none;
+        }
+        @include min1024 {
+            &:focus-visible,&:hover {
+                background-color: $green;
+                color: $white;
+            }
+        }
+    }
+}
+
+.btn-card-photo-album {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background-color: transparent;
+    &:focus-visible,&:focus {
+        outline: none;
+    }
+    @include min1024 {
+        &:focus-visible,&:hover {
+            
         }
     }
 }

@@ -1,0 +1,42 @@
+.before-footer {
+  display: flex;
+  @include max1200 {
+    display: none;
+  }
+  &__logo {
+    width: 341px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    border-right: 1px solid rgba(100, 100, 100, 0.2);
+    @include max1200 {
+      width: 321px;
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:focus-visible,&:focus {
+        outline: none;
+      }
+      img {
+        pointer-events: none;
+        width: 285px;
+      }
+    }
+  }
+  &__text {
+    flex: 1;
+    padding-left: 56px;
+    color: var(--black, #141414);
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%;
+    @include max1200 {
+      padding-left: 36px;
+      font-size: 18px;
+    }
+  }
+}

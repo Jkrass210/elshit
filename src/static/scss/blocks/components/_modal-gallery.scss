@@ -14,6 +14,36 @@
   animation: fadeIn 0.5s ease-out;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  &.drawings {
+    .modal-gallery__content {
+      width: 100%;
+      max-height: calc(100vh - 45px);
+      min-height: calc(100vh - 45px);
+      @include min1024 {
+        width: 900px;
+        max-height: calc(100vh - 136px);
+        min-height: calc(100vh - 136px);
+      }
+    }
+    .modal-gallery__drawings-inner {
+      width: 100%;
+      padding: 15px;
+      height: calc(100vh - 45px);
+      border-radius: 15px;
+      background-color: #FFF;
+      overflow: hidden;
+      @include min1024 {
+        height: calc(100vh - 136px);
+        padding: 20px;
+        border-radius: 20px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
   &.reviews {
     padding: 60px 17px;
     .modal-gallery__content {

@@ -1,0 +1,119 @@
+.card-brandbook {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px;
+  border-radius: 24px;
+  background-color: var(--white, #FFF);
+  @include max1920 {
+    padding: 20px;
+  }
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include max1920 {
+      gap: 12px;
+    }
+  }
+  &__title {
+    color: var(--black, #141414);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    @include max1920 {
+      font-size: 18px;
+    }
+  }
+  &__text {
+    color: var(--gray-200, #646464);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    @include max1920 {
+      font-size: 15px;
+    }
+  }
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    @include max1024 {
+      width: 100%;
+      justify-content: center;
+      height: 48px;
+      border-radius: 16px;
+      background-color: var(--gray-100, #F5F5F5);
+
+    }
+    .text {
+      color: var(--black, #141414);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 141.176%;
+      transition: color 0.4s ease-in-out;
+      @include max1920 {
+        font-size: 16px;
+      }
+      b {
+        font-weight: 400;
+        @include max1024 {
+          display: none;
+        }
+      }
+    }
+    .volume {
+      color: var(--gray-200, #646464);
+      font-size: 17px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 141.176%;
+      transition: color 0.4s ease-in-out;
+      @include max1920 {
+        font-size: 16px;
+      }
+      @include max1024 {
+        font-size: 13px;
+      }
+    }
+    .svg {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 100%;
+      background-color: $green;
+      color: $white;
+      margin-left: 8px;
+      @include max1920 {
+        margin-left: 4px;
+      }
+      @include max1024 {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &:focus-visible,
+    &:focus {
+      outline: none;
+    }
+    @include min1024 {
+      &:focus-visible,
+      &:hover {
+        .text {
+          color: $green;
+        }
+        .volume {
+          color: $green;
+        }
+      }
+    }
+  }
+}

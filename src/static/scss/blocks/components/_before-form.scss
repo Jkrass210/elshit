@@ -1,0 +1,23 @@
+.before-form {
+  &-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    @include max1920 {
+      gap: 12px;
+    }
+  }
+  &-desc {
+    color: var(--gray-200, #646464);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 133.333%;
+    @include max1920 {
+      font-size: 17px;
+    }
+    @include max1024 {
+      font-size: 15px;
+    }
+  }
+}

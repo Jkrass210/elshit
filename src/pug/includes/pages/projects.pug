@@ -1,0 +1,143 @@
+main
+  .path
+    ul
+      li
+        a(href="#") Главная страница
+      li
+        span Проекты
+    .path-back
+      a.path-back_link(href="#")
+        span.svg
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M1.57574 12.5757C1.34142 12.8101 1.34142 13.1899 1.57574 13.4243L5.39411 17.2426C5.62843 17.477 6.00833 17.477 6.24264 17.2426C6.47696 17.0083 6.47696 16.6284 6.24264 16.3941L2.84853 13L6.24264 9.60589C6.47696 9.37157 6.47696 8.99167 6.24264 8.75736C6.00833 8.52304 5.62843 8.52304 5.39411 8.75736L1.57574 12.5757ZM22 13.6C22.3314 13.6 22.6 13.3314 22.6 13C22.6 12.6686 22.3314 12.4 22 12.4L22 13L22 13.6ZM2 13L2 13.6L22 13.6L22 13L22 12.4L2 12.4L2 13Z" fill="currentColor"/>
+          </svg>
+        span.text Вернуться назад
+
+  .page-title
+    h1.page-title__text Проекты
+
+  section.sect
+    .container
+      .project-hero
+        .project-hero__content
+          .project-hero__top
+            .project-hero__img
+              img(src="img/project-hero/hero.jpg", alt="img")
+            .project-hero__description
+              p Проектная деятельность «Электрощит-К°» ориентирована на объекты, где надёжность оборудования и точность измерений имеют критическое значение. В рамках таких проектов компания разрабатывает не только продукцию, но и специализированные инженерные решения — от испытательных установок до индивидуальных методик контроля и подтверждения параметров.
+
+          .project-hero__bottom
+            ul.point-list
+              li
+                article.card-point
+                  .card-point__img
+                    img(src="img/card-point/1.svg", alt="svg")
+                  .card-point__content
+                    h3.card-point__title Требования <br> объекта
+                    p.card-point__desc Анализ параметров, режимов работы и условий эксплуатации оборудования на объектах критической инфраструктуры.
+              li
+                article.card-point
+                  .card-point__img
+                    img(src="img/card-point/2.svg", alt="svg")
+                  .card-point__content
+                    h3.card-point__title Инженерная <br> разработка
+                    p.card-point__desc Создание нестандартных конструктивных, измерительных и испытательных решений под требования проекта.
+              li
+                article.card-point
+                  .card-point__img
+                    img(src="img/card-point/3.svg", alt="svg")
+                  .card-point__content
+                    h3.card-point__title Подтверждение <br> параметров
+                    p.card-point__desc Проведение испытаний на собственных установках для подтверждения требований объекта.
+              li
+                article.card-point
+                  .card-point__img
+                    img(src="img/card-point/4.svg", alt="svg")
+                  .card-point__content
+                    h3.card-point__title Реализация <br> и сопровождение
+                    p.card-point__desc Интеграция инженерных решений в производство и сопровождение проекта на всех этапах.
+
+  section.sect
+    .container
+      .unique-decisions
+        h2.h2 Уникальные инженерные решения
+        .unique-decisions__box-swiper
+          .swiper-unique-decisions.swiper.load
+            .swiper-wrapper
+              .swiper-slide
+                article.card-unique-decisions
+                  h3.card-unique-decisions__title.hidden Испытательные установки высокой мощности
+                  .card-unique-decisions__left
+                    h3.card-unique-decisions__title Испытательные установки высокой мощности
+                    .card-unique-decisions__box-text
+                      p.card-unique-decisions__desc Испытания токами до 50 кА. Разработана специализированная установка для испытаний трансформаторного оборудования токами до 50 кА. Используется для объектов с повышенными требованиями, включая Курскую АЭС и АЭС «Аккую».
+                      .card-unique-decisions__group
+                        p Благодаря чему достигаются уникальные результаты:
+                        ul
+                          li Подтверждение параметров, недоступных стандартным лабораториям
+                          li Контроль характеристик в условиях, приближённых к эксплуатации
+                          
+                  .card-unique-decisions__right
+                    .card-unique-decisions__img
+                      img(src="img/card-unique-decisions/1.jpg", alt="img")
+              .swiper-slide
+                article.card-unique-decisions
+                  h3.card-unique-decisions__title.hidden Нестандартные измерительные решения
+                  .card-unique-decisions__left
+                    h3.card-unique-decisions__title Испытательные установки высокой мощности
+                    .card-unique-decisions__box-text
+                      p.card-unique-decisions__desc Испытания токами до 50 кА. Разработана специализированная установка для испытаний трансформаторного оборудования токами до 50 кА. Используется для объектов с повышенными требованиями, включая Курскую АЭС и АЭС «Аккую».
+                      .card-unique-decisions__group
+                        p Благодаря чему достигаются уникальные результаты:
+                        ul
+                          li Подтверждение параметров, недоступных стандартным лабораториям
+                          li Контроль характеристик в условиях, приближённых к эксплуатации
+              .swiper-slide
+                article.card-unique-decisions
+                  h3.card-unique-decisions__title.hidden Нестандартные измерительные решения
+                  .card-unique-decisions__left
+                    h3.card-unique-decisions__title Нестандартные измерительные решения
+                    .card-unique-decisions__box-text
+                      p.card-unique-decisions__desc Измерительное оборудование под индивидуальные требования объектов. Разработка трансформаторов и решений со специальными параметрами и конфигурациями, соответствующими требованиям объектов критической инфраструктуры.
+                      .card-unique-decisions__group
+                        p Результаты:
+                        ul
+                          li Соблюдение повышенных требований точности и надёжности
+                          li Адаптация под конкретные условия эксплуатации
+              .swiper-slide
+                article.card-unique-decisions
+                  h3.card-unique-decisions__title.hidden Проектные методики испытаний
+                  .card-unique-decisions__left
+                    h3.card-unique-decisions__title Проектные методики испытаний
+                    .card-unique-decisions__box-text
+                      p.card-unique-decisions__desc Индивидуальные программы контроля и испытаний. <br> Разрабатываются методики испытаний, учитывающие реальные режимы работы оборудования и требования проектной документации объектов критической важности.
+                      .card-unique-decisions__group
+                        p Результаты:
+                        ul
+                          li Полное подтверждение параметров оборудования
+                          li Воспроизводимость и трассируемость результатов
+            .swiper-unique-decisions-nav
+              .pagination__arrows
+                a.link-pagination.--prev(href="#")
+                  span.svg
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="12" viewBox="0 0 26 12" fill="none">
+                      <path d="M24.8008 6.69111C25.2426 6.69111 25.6008 6.33294 25.6008 5.89111C25.6008 5.44929 25.2426 5.09111 24.8008 5.09111L24.8008 5.89111L24.8008 6.69111ZM0.235094 5.32543C-0.0773239 5.63785 -0.0773239 6.14438 0.235094 6.4568L5.32626 11.548C5.63868 11.8604 6.14522 11.8604 6.45763 11.548C6.77005 11.2355 6.77005 10.729 6.45763 10.4166L1.93215 5.89111L6.45763 1.36563C6.77005 1.05321 6.77005 0.546677 6.45763 0.234258C6.14522 -0.0781619 5.63868 -0.078162 5.32626 0.234257L0.235094 5.32543ZM24.8008 5.89111L24.8008 5.09111L0.800781 5.09111L0.800781 5.89111L0.800781 6.69111L24.8008 6.69111L24.8008 5.89111Z" fill="currentColor"/>
+                    </svg>
+                a.link-pagination.--next(href="#")
+                  span.svg
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="12" viewBox="0 0 26 12" fill="none">
+                      <path d="M0.800781 6.69111C0.358954 6.69111 0.000781277 6.33294 0.000781238 5.89111C0.000781199 5.44929 0.358953 5.09111 0.800781 5.09111L0.800781 5.89111L0.800781 6.69111ZM25.3665 5.32543C25.6789 5.63785 25.6789 6.14438 25.3665 6.4568L20.2753 11.548C19.9629 11.8604 19.4563 11.8604 19.1439 11.548C18.8315 11.2355 18.8315 10.729 19.1439 10.4166L23.6694 5.89111L19.1439 1.36563C18.8315 1.05321 18.8315 0.546677 19.1439 0.234258C19.4563 -0.0781619 19.9629 -0.078162 20.2753 0.234257L25.3665 5.32543ZM0.800781 5.89111L0.800781 5.09111L24.8008 5.09111L24.8008 5.89111L24.8008 6.69111L0.800781 6.69111L0.800781 5.89111Z" fill="currentColor"/>
+                    </svg>    
+          
+          .swiper-unique-decisions-pagination
+
+  include ../sections/map
+
+  section.sect
+    .container
+      .before-footer
+        .before-footer__logo
+          a(href="#")
+            img(src="img/logo.svg", alt="logo")
+        .before-footer__text
+          p Проекты «Электрощит-К°» реализуются за счёт инженерных решений, разработанных специально для объектов с повышенными требованиями к надёжности и точности.
